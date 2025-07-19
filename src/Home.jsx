@@ -38,6 +38,8 @@ const Home = () => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className={`w-[200px] h-[200px] bg-yellow-300 rounded-4xl ml-3`}>
 
           </div>
         </div>
