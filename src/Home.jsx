@@ -55,7 +55,8 @@ const Home = () => {
           </button>
 
           {/* Image */}
-          <div className="w-[200px] h-[240px] flex items-center justify-start overflow-hidden rounded-2xl mb-4 mt-8">
+          <div className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[200px]flex items-center justify-start overflow-hidden rounded-2xl mb-4 mt-8">
+
             <AnimatePresence mode="wait">
               <motion.img
                 key={imageIndex}
