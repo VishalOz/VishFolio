@@ -97,11 +97,59 @@ const Home = () => {
         </div>
 
         {/* Third box*/ }
-        <div className="col-span-2 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <div className="col-span-2 row-span-2 bg-white rounded-4xl p-6 shadow-lg">
         </div>
         {/* Forth box*/ }
-        <div className="col-span-1 row-span-1/2 bg-white rounded-4xl p-6 shadow-lg">
-        <img src="../src/assets/insta.gif" alt="Insta" className="w-full object-cover"/>
+        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <img src="" alt="Insta" className="w-full object-cover"/>
+        </div>
+
+        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <img src="" alt="Github" className="w-full object-cover"/>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill A</h4>
+          <p className="text-sm text-gray-500">React.js</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill B</h4>
+          <p className="text-sm text-gray-500">Tailwind CSS</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+
+        {/* Testimonial Tile */}
+        <div className="col-span-3 row-span-2 bg-green-100 rounded-2xl p-6">
+          <blockquote className="italic text-green-900">“Nev’s work is professional, beautiful, and impactful.”</blockquote>
+          <p className="mt-2 text-sm text-green-800">— Happy Client</p>
+        </div>
+
+        <div className="col-span-3 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+        
+
+
+
+        <div className="col-span-3 row-span-1 bg-indigo-100 text-indigo-900 rounded-2xl p-6">
+          <h4 className="font-semibold text-lg">Let’s Connect</h4>
+          <p className="text-sm mt-1">nev@example.com</p>
+          <div className="mt-4 flex gap-4">
+            <a href="#" className="underline text-sm">LinkedIn</a>
+            <a href="#" className="underline text-sm">GitHub</a>
+            <a href="#" className="underline text-sm">Instagram</a>
+          </div>
         </div>
 
       </div>
