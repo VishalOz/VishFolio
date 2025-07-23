@@ -8,6 +8,8 @@ import dp1 from '../src/assets/dp3.png'
 const Home = () => {
   const images = [dp1, dp2];
   const [imageIndex, setImageIndex] = useState(0);
+  const [refreshSpin, setRefreshSpin] = useState(0);
+
 
   const handleImageSwitch = () => {
     setImageIndex((prev) => (prev + 1) % images.length);
@@ -42,17 +44,29 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <Nav />
-      <div className="max-w-7xl mx-auto grid grid-cols-6 grid-rows-6 gap-4"> 
+      <div className="max-w-7xl min-h-md mx-auto grid grid-cols-6 grid-rows-[repeat(6,minmax(0,auto))] gap-4">
+
         {/* First box*/ }
         <div className="relative col-span-3 row-span-1 bg-white text-white rounded-4xl px-10 py-6 flex flex-col justify-between items-start shadow-lg">
 
           {/* Top-right button */}
           <button
-            onClick={handleImageSwitch}
-            className="absolute top-8 right-6 text-black py-1 px-4 rounded-full border border-gray-300 hover:border-gray-800 cursor-pointer  transition"
+            onClick={() => {
+              handleImageSwitch();
+              setRefreshSpin((prev) => prev + 1);
+            }}
+            className="absolute top-8 right-6 text-black py-1 px-4 rounded-full border border-gray-300 hover:border-gray-800 cursor-pointer transition flex items-center gap-2"
           >
+            <motion.img
+              src="../src/assets/refresh.svg"
+              alt="toggle"
+              className="w-4 h-4"
+              animate={{ rotate: refreshSpin * 360 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            />
             Toggle Developer
           </button>
+
 
           {/* Image */}
           <div className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[200px]flex items-center justify-start overflow-hidden rounded-4xl mb-4 mt-8">
@@ -97,11 +111,65 @@ const Home = () => {
         </div>
 
         {/* Third box*/ }
-        <div className="col-span-2 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <div className="col-span-2 row-span-2 bg-green-200 rounded-4xl p-6 shadow-lg">
         </div>
         {/* Forth box*/ }
-        <div className="col-span-1 row-span-1/2 bg-white rounded-4xl p-6 shadow-lg">
-        <img src="../src/assets/insta.gif" alt="Insta" className="w-full object-cover"/>
+        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full object-cover"/>
+        <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
+            <img src="../src/assets/move.png" alt="arrow" className=" border border-white sm:w-[25px] rounded-full hover:bg-gray-200"/>
+          </a>
+        </div>
+
+        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+          <img src="../src/assets/githubog.svg" alt="Github" className="w-full object-cover"/>
+          <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
+            <img src="../src/assets/move.png" alt="arrow" className=" border border-white sm:w-[25px] rounded-full hover:bg-gray-200"/>
+          </a>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-indigo-300 rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill A</h4>
+          <p className="text-sm text-gray-500">React.js</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill B</h4>
+          <p className="text-sm text-gray-500">Tailwind CSS</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+
+        {/* Testimonial Tile */}
+        <div className="col-span-3 row-span-2 bg-green-100 rounded-2xl p-6">
+          <blockquote className="italic text-green-900">“Nev’s work is professional, beautiful, and impactful.”</blockquote>
+          <p className="mt-2 text-sm text-green-800">— Happy Client</p>
+        </div>
+
+        <div className="col-span-3 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-medium">Skill C</h4>
+          <p className="text-sm text-gray-500">Framer Motion</p>
+        </div>
+        
+
+
+
+        <div className="col-span-3 row-span-1 bg-indigo-100 text-indigo-900 rounded-2xl p-6">
+          <h4 className="font-semibold text-lg">Let’s Connect</h4>
+          <p className="text-sm mt-1">nev@example.com</p>
+          <div className="mt-4 flex gap-4">
+            <a href="#" className="underline text-sm">LinkedIn</a>
+            <a href="#" className="underline text-sm">GitHub</a>
+            <a href="#" className="underline text-sm">Instagram</a>
+          </div>
         </div>
 
       </div>
