@@ -111,18 +111,18 @@ const Home = () => {
         </div>
 
         {/* Third box*/ }
-        <div className="col-span-2 row-span-2 bg-green-200 rounded-4xl p-6 shadow-lg">
+        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-green-200 rounded-4xl p-6 shadow-lg">
         </div>
         {/* Forth box*/ }
-        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-white rounded-4xl p-6 shadow-lg">
         <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full object-cover"/>
+          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full max-w-[150px] mx-auto object-contain"/>
         </a>
         </div>
 
-        <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-white rounded-4xl p-6 shadow-lg">
           <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-          <img src="../src/assets/githubog.svg" alt="Github" className="w-full object-cover "/>
+          <img src="../src/assets/githubog.svg" alt="Github" className="w-full max-w-[150px] mx-auto object-contain "/>
           </a>
         </div>
 
@@ -133,7 +133,7 @@ const Home = () => {
           development, and how I've found value in the cross section
           between both disciplines </p>
           <button className="flex mt-3 text-black border text-sm border-gray-300 px-2 py-1 rounded-4xl cursor-pointer hover:bg-gray-100 ">
-            <img src="../src/assets/arrow.png" alt="arrow" className="w-6 sm:w-10 border border-white rounded-full hover:border-gray-300 mr-1"/>
+            <img src="../src/assets/arrow.png" alt="arrow" className="w-5 sm:w-6 border border-white rounded-full hover:border-gray-300 mr-1"/>
             Read more
           </button>
         </div>
