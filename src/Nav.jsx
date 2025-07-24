@@ -13,9 +13,9 @@ const Nav = () => {
     item.toLowerCase() === 'all' ? '#all' : `#${item.toLowerCase()}`;
 
   return (
-    <div className="w-full flex justify-center py-15 px-2">
+    <div className="w-full flex justify-center px-4 sm:px-6 md:px-8 py-4 bg-transparent z-50">
       <nav
-        className="flex overflow-x-auto bg-gray-200 p-2 rounded-full gap-3 text-gray-950 font-bold text-md font-sm scrollbar-hide"
+        className="flex max-w-full overflow-x-auto bg-gray-200 p-2 rounded-full gap-3 text-gray-950 font-semibold text-sm sm:text-base scrollbar-hide no-scrollbar"
       >
         {navBar.map((item) => (
           <a
@@ -29,8 +29,8 @@ const Nav = () => {
                 target.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className={`cursor-pointer px-4 py-1 rounded-full whitespace-nowrap transition ${
-              selectedIcon === item ? 'bg-white text-black shadow' : ''
+            className={`cursor-pointer px-4 py-1 rounded-full whitespace-nowrap transition duration-200 ${
+              selectedIcon === item ? 'bg-white text-black shadow-md' : 'hover:bg-white/70'
             }`}
           >
             {item}

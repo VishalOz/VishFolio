@@ -69,14 +69,14 @@ const Home = () => {
 
 
           {/* Image */}
-          <div className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[200px]flex items-center justify-start overflow-hidden rounded-4xl mb-4 mt-8">
+          <div className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[200px] flex items-center justify-start overflow-hidden rounded-4xl mb-4 mt-8">
 
             <AnimatePresence mode="wait">
               <motion.img
                 key={imageIndex}
                 src={images[imageIndex]}
                 alt="Profile"
-                className="w-[180px] h-[260px] object-fit rounded-full"
+                className="w-32 h-32 sm:w-44 md:w-48 md:h-64  object-fit rounded-full"
                 variants={variants}
                 initial="initial"
                 animate="animate"
@@ -133,7 +133,7 @@ const Home = () => {
           development, and how I've found value in the cross section
           between both disciplines </p>
           <button className="flex mt-3 text-black border text-sm border-gray-300 px-2 py-1 rounded-4xl cursor-pointer hover:bg-gray-100 ">
-            <img src="../src/assets/arrow.png" alt="arrow" className="border border-white sm:w-[20px] rounded-full hover:border-gray-300 mr-1"/>
+            <img src="../src/assets/arrow.png" alt="arrow" className="w-6 sm:w-10 border border-white rounded-full hover:border-gray-300 mr-1"/>
             Read more
           </button>
         </div>
@@ -154,7 +154,7 @@ const Home = () => {
         </div>
 
         {/* Testimonial Tile */}
-        <div className="col-span-3 row-span-2 bg-green-100 rounded-2xl p-6">
+        <div className="relative col-span-1 sm:col-span-2 md:col-span-3 row-span-1 bg-green-100 rounded-2xl p-6">
           <blockquote className="italic text-green-900">“Nev’s work is professional, beautiful, and impactful.”</blockquote>
           <p className="mt-2 text-sm text-green-800">— Happy Client</p>
         </div>
