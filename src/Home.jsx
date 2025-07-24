@@ -61,7 +61,7 @@ const Home = () => {
               src="../src/assets/refresh.svg"
               alt="toggle"
               className="w-4 h-4"
-              animate={{ rotate: refreshSpin * 360 }}
+              animate={{ rotate: refreshSpin * 180 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
             />
             Toggle Developer
@@ -89,7 +89,7 @@ const Home = () => {
           <div className="flex justify-center items-center">
             <p className="text-gray-800 text-md font-semibold">
             I am <span className="font-bold text-xl text-black">Vishal</span>, a developer and designer from Sri Lanka.  
-            I'm passionate about <span className="font-semibold text-indigo-600">React, Java, .NET</span>,  
+            I'm passionate about React, Java, .NET,  
             Always curious, I strive to build experiences that are both functional and visually compelling.
 
             </p>
@@ -115,36 +115,41 @@ const Home = () => {
         </div>
         {/* Forth box*/ }
         <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
-          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full object-cover"/>
         <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-            <img src="../src/assets/move.png" alt="arrow" className=" border border-white sm:w-[25px] rounded-full hover:bg-gray-200"/>
-          </a>
+          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full object-cover"/>
+        </a>
         </div>
 
         <div className="col-span-1 row-span-1 bg-white rounded-4xl p-6 shadow-lg">
-          <img src="../src/assets/githubog.svg" alt="Github" className="w-full object-cover"/>
           <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-            <img src="../src/assets/move.png" alt="arrow" className=" border border-white sm:w-[25px] rounded-full hover:bg-gray-200"/>
+          <img src="../src/assets/githubog.svg" alt="Github" className="w-full object-cover "/>
           </a>
         </div>
 
-        <div className="col-span-2 row-span-1 bg-indigo-300 rounded-2xl shadow p-6">
-          <h4 className="font-medium">Skill A</h4>
-          <p className="text-sm text-gray-500">React.js</p>
+        <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
+          <h4 className="font-4xl">How it started vs. how it's going</h4>
+          <p className="text-sm text-gray-500 mb-3">Thu 24 July</p>
+          <p>A short personal history as it relates to design and<br/>
+          development, and how I've found value in the cross section
+          between both disciplines </p>
+          <button className="flex mt-3 text-black border text-sm border-gray-300 px-2 py-1 rounded-4xl cursor-pointer hover:bg-gray-100 ">
+            <img src="../src/assets/arrow.png" alt="arrow" className="border border-white sm:w-[20px] rounded-full hover:border-gray-300 mr-1"/>
+            Read more
+          </button>
         </div>
 
         <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
-          <h4 className="font-medium">Skill B</h4>
+          <h1 className="font-medium">Skill B</h1>
           <p className="text-sm text-gray-500">Tailwind CSS</p>
         </div>
 
         <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
-          <h4 className="font-medium">Skill C</h4>
+          <h1 className="font-medium">Skill C</h1>
           <p className="text-sm text-gray-500">Framer Motion</p>
         </div>
 
         <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
-          <h4 className="font-medium">Skill C</h4>
+          <h1 className="font-medium">Skill C</h1>
           <p className="text-sm text-gray-500">Framer Motion</p>
         </div>
 
@@ -155,7 +160,7 @@ const Home = () => {
         </div>
 
         <div className="col-span-3 row-span-1 bg-white rounded-2xl shadow p-6">
-          <h4 className="font-medium">Skill C</h4>
+          <h1 className="font-medium">Skill C</h1>
           <p className="text-sm text-gray-500">Framer Motion</p>
         </div>
         
@@ -163,7 +168,7 @@ const Home = () => {
 
 
         <div className="col-span-3 row-span-1 bg-indigo-100 text-indigo-900 rounded-2xl p-6">
-          <h4 className="font-semibold text-lg">Let’s Connect</h4>
+          <h1 className="font-semibold text-lg">Let’s Connect</h1>
           <p className="text-sm mt-1">nev@example.com</p>
           <div className="mt-4 flex gap-4">
             <a href="#" className="underline text-sm">LinkedIn</a>
