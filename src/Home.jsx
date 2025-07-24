@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <Nav />
-      <div className="max-w-7xl min-h-md mx-auto grid grid-cols-6 grid-rows-[repeat(6,minmax(0,auto))] gap-4">
+      <div className="max-w-7xl min-h-md mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6  gap-4">
 
         {/* First box*/ }
         <div className="relative col-span-3 row-span-1 bg-white text-white rounded-4xl px-10 py-6 flex flex-col justify-between items-start shadow-lg">
