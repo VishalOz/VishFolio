@@ -1,18 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Nav from './Nav'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import dp2 from '../src/assets/dp2.png'
 import dp1 from '../src/assets/dp3.png'
 
+
 const Home = () => {
   const images = [dp1, dp2];
   const [imageIndex, setImageIndex] = useState(0);
   const [refreshSpin, setRefreshSpin] = useState(0);
 
+  const [mode, setMode] = useState("Light");
+
+  useEffect(() => {
+      if(mode === 'Dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+  }, [mode]);
 
   const handleImageSwitch = () => {
     setImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const modeChange = () => {
+    setMode((prev) => (prev === "Dark" ? "Light" : "Dark"));
   };
 
   const variants = {
@@ -111,16 +125,15 @@ const Home = () => {
         </div>
 
         {/* Third box*/ }
-        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-green-200 rounded-4xl p-6 shadow-lg">
-        </div>
-        {/* Forth box*/ }
-        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-white rounded-4xl p-6 shadow-lg">
-        <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-          <img src="../src/assets/instaog.svg" alt="Insta" className="w-full max-w-[150px] mx-auto object-contain"/>
-        </a>
+        <div className="relative col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-emerald-200 rounded-4xl p-6 shadow-lg overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-50 h-50 bg-gray-100 rounded-full"></div>
+          <div className="w-[90%] h-[130px] bg-transparent rounded-4xl p-6 mt-10 relative z-10"></div>
+          <div className="absolute -bottom-20 -right-20 w-100 h-90 bg-pink-200 rounded-full"></div>
         </div>
 
-        <div className="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-white rounded-4xl p-6 shadow-lg">
+        {/* Forth box*/ }
+
+        <div className="col-span-1 sm:col-span-1 row-span-1 sm:row-span-1 bg-white rounded-4xl p-6 shadow-lg">
           <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
           <img src="../src/assets/githubog.svg" alt="Github" className="w-full max-w-[150px] mx-auto object-contain "/>
           </a>
@@ -135,6 +148,14 @@ const Home = () => {
           <button className="flex mt-3 text-black border text-sm border-gray-300 px-2 py-1 rounded-4xl cursor-pointer hover:bg-gray-100 ">
             <img src="../src/assets/arrow.png" alt="arrow" className="w-5 sm:w-6 border border-white rounded-full hover:border-gray-300 mr-1"/>
             Read more
+          </button>
+        </div>
+
+        <div className="flex justify-center items-center col-span-1 sm:col-span-1 row-span-1 sm:row-span-1 bg-white rounded-4xl p-6 shadow-lg">
+          <button 
+            onClick={modeChange}
+            className="px-4 py-2 rounded-full font-semibold shadow-md transition-colors">
+            {mode === "Dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
           </button>
         </div>
 
@@ -154,8 +175,8 @@ const Home = () => {
         </div>
 
         {/* Testimonial Tile */}
-        <div className="relative col-span-1 sm:col-span-2 md:col-span-3 row-span-1 bg-green-100 rounded-2xl p-6">
-          <blockquote className="italic text-green-900">“Nev’s work is professional, beautiful, and impactful.”</blockquote>
+        <div className="relative col-span-1 sm:col-span-2 md:col-span-3 row-span-1 bg-emerald-200 rounded-2xl p-6">
+          <blockquote className="italic text-green-900">“Vish’s work is professional, beautiful, and impactful.”</blockquote>
           <p className="mt-2 text-sm text-green-800">— Happy Client</p>
         </div>
 
@@ -169,7 +190,7 @@ const Home = () => {
 
         <div className="col-span-3 row-span-1 bg-indigo-100 text-indigo-900 rounded-2xl p-6">
           <h1 className="font-semibold text-lg">Let’s Connect</h1>
-          <p className="text-sm mt-1">nev@example.com</p>
+          <p className="text-sm mt-1">oshadavishal392@gmail.com</p>
           <div className="mt-4 flex gap-4">
             <a href="#" className="underline text-sm">LinkedIn</a>
             <a href="#" className="underline text-sm">GitHub</a>
