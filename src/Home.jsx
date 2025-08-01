@@ -1,24 +1,22 @@
-import React, { useState,useEffect } from 'react'
-import Nav from './Nav'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState, useEffect } from 'react';
+import Nav from './Nav';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import dp2 from '../src/assets/dp2.png'
-import dp1 from '../src/assets/dp3.png'
-
+import dp2 from '../src/assets/dp2.png';
+import dp1 from '../src/assets/dp3.png';
 
 const Home = () => {
   const images = [dp1, dp2];
   const [imageIndex, setImageIndex] = useState(0);
   const [refreshSpin, setRefreshSpin] = useState(0);
-
   const [mode, setMode] = useState("Light");
 
   useEffect(() => {
-      if(mode === 'Dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+    if (mode === 'Dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [mode]);
 
   const handleImageSwitch = () => {
@@ -58,12 +56,10 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <Nav />
-      <div className="max-w-7xl min-h-md mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6  gap-4">
+      <div className="max-w-7xl min-h-md mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 
-        {/* First box*/ }
+        {/* First Box */}
         <div className="relative col-span-3 row-span-1 bg-white text-white rounded-4xl px-10 py-6 flex flex-col justify-between items-start shadow-lg">
-
-          {/* Top-right button */}
           <button
             onClick={() => {
               handleImageSwitch();
@@ -81,16 +77,13 @@ const Home = () => {
             Toggle Developer
           </button>
 
-
-          {/* Image */}
-          <div className="sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[200px] flex items-center justify-start overflow-hidden rounded-4xl mb-4 mt-8">
-
+          <div className="w-full flex items-center justify-start overflow-hidden rounded-4xl mb-4 mt-8">
             <AnimatePresence mode="wait">
               <motion.img
                 key={imageIndex}
                 src={images[imageIndex]}
                 alt="Profile"
-                className="w-32 h-32 sm:w-44 md:w-48 md:h-64  object-fit rounded-full"
+                className="w-32 h-32 sm:w-40 md:w-44 md:h-52 object-cover rounded-full"
                 variants={variants}
                 initial="initial"
                 animate="animate"
@@ -99,19 +92,17 @@ const Home = () => {
             </AnimatePresence>
           </div>
 
-          {/* Text */}
           <div className="flex justify-center items-center">
             <p className="text-gray-800 text-md font-semibold">
-            I am <span className="font-bold text-xl text-black">Vishal</span>, a developer and designer from Sri Lanka.  
-            I'm passionate about React, Java, .NET,  
-            Always curious, I strive to build experiences that are both functional and visually compelling.
-
+              I am <span className="font-bold text-xl text-black">Vishal</span>, a developer and designer from Sri Lanka.  
+              I'm passionate about React, Java, .NET,  
+              Always curious, I strive to build experiences that are both functional and visually compelling.
             </p>
           </div>
         </div>
 
-        {/* Second box*/ }
-        <div className="sm:w-full sm:h-[369px] md:w-full md:h-[369px] rounded-4xl overflow-hidden shadow-lg">
+        {/* Second Box: Map */}
+        <div className="w-full aspect-video rounded-4xl overflow-hidden shadow-lg">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63322.89988123552!2d79.82967404999999!3d6.921922699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259292084b94b%3A0x810fc39fdce6e0b!2sColombo!5e0!3m2!1sen!2slk!4v1621942393063!5m2!1sen!2slk"
             width="100%"
@@ -124,35 +115,36 @@ const Home = () => {
           ></iframe>
         </div>
 
-        {/* Third box*/ }
+        {/* Third Box */}
         <div className="relative col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 bg-emerald-200 rounded-4xl p-6 shadow-lg overflow-hidden">
           <div className="absolute -top-20 -right-20 w-50 h-50 bg-gray-100 rounded-full"></div>
           <div className="w-[90%] h-[130px] bg-transparent rounded-4xl p-6 mt-10 relative z-10"></div>
           <div className="absolute -bottom-20 -right-20 w-100 h-90 bg-pink-200 rounded-full"></div>
         </div>
 
-        {/* Forth box*/ }
-
+        {/* Fourth Box */}
         <div className="col-span-1 sm:col-span-1 row-span-1 sm:row-span-1 bg-white rounded-4xl p-6 shadow-lg">
           <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-          <img src="../src/assets/githubog.svg" alt="Github" className="w-full max-w-[150px] mx-auto object-contain "/>
+            <img src="../src/assets/githubog.svg" alt="Github" className="w-full max-w-[150px] mx-auto object-contain" />
           </a>
         </div>
 
         <div className="col-span-2 row-span-1 bg-white rounded-2xl shadow p-6">
           <h4 className="font-4xl">How it started vs. how it's going</h4>
           <p className="text-sm text-gray-500 mb-3">Thu 24 July</p>
-          <p>A short personal history as it relates to design and<br/>
-          development, and how I've found value in the cross section
-          between both disciplines </p>
+          <p>
+            A short personal history as it relates to design and<br />
+            development, and how I've found value in the cross section
+            between both disciplines
+          </p>
           <button className="flex mt-3 text-black border text-sm border-gray-300 px-2 py-1 rounded-4xl cursor-pointer hover:bg-gray-100 ">
-            <img src="../src/assets/arrow.png" alt="arrow" className="w-5 sm:w-6 border border-white rounded-full hover:border-gray-300 mr-1"/>
+            <img src="../src/assets/arrow.png" alt="arrow" className="w-5 sm:w-6 border border-white rounded-full hover:border-gray-300 mr-1" />
             Read more
           </button>
         </div>
 
         <div className="flex justify-center items-center col-span-1 sm:col-span-1 row-span-1 sm:row-span-1 bg-white rounded-4xl p-6 shadow-lg">
-          <button 
+          <button
             onClick={modeChange}
             className="px-4 py-2 rounded-full font-semibold shadow-md transition-colors">
             {mode === "Dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
@@ -174,7 +166,6 @@ const Home = () => {
           <p className="text-sm text-gray-500">Framer Motion</p>
         </div>
 
-        {/* Testimonial Tile */}
         <div className="relative col-span-1 sm:col-span-2 md:col-span-3 row-span-1 bg-emerald-200 rounded-2xl p-6">
           <blockquote className="italic text-green-900">“Vish’s work is professional, beautiful, and impactful.”</blockquote>
           <p className="mt-2 text-sm text-green-800">— Happy Client</p>
@@ -184,9 +175,6 @@ const Home = () => {
           <h1 className="font-medium">Skill C</h1>
           <p className="text-sm text-gray-500">Framer Motion</p>
         </div>
-        
-
-
 
         <div className="col-span-3 row-span-1 bg-indigo-100 text-indigo-900 rounded-2xl p-6">
           <h1 className="font-semibold text-lg">Let’s Connect</h1>
@@ -200,7 +188,7 @@ const Home = () => {
 
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
