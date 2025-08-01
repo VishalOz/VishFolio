@@ -1,43 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Nav = () => {
-  const [selectedIcon, setSelectedIcon] = useState('All');
+  const [selected, setSelected] = useState('Home');
 
-  useEffect(() => {
-    console.log({ selectedIcon });
-  }, [selectedIcon]);
-
-  const navBar = ['All', 'About', 'Projects', 'Media'];
-
-  const formatLink = (item) =>
-    item.toLowerCase() === 'all' ? '#all' : `#${item.toLowerCase()}`;
+  const navItems = ['Home', 'About', 'Projects', 'Media'];
 
   return (
-    <div className="w-full flex justify-center px-4 sm:px-6 md:px-8 py-4 bg-transparent z-50">
-      <nav
-        className="flex max-w-full overflow-x-auto bg-gray-200 p-2 rounded-full gap-3 text-gray-950 font-semibold text-sm sm:text-base scrollbar-hide no-scrollbar"
-      >
-        {navBar.map((item) => (
-          <a
-            key={item}
-            href={formatLink(item)}
-            onClick={(e) => {
-              e.preventDefault();
-              setSelectedIcon(item);
-              const target = document.querySelector(formatLink(item));
-              if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className={`cursor-pointer px-4 py-1 rounded-full whitespace-nowrap transition duration-200 ${
-              selectedIcon === item ? 'bg-white text-black shadow-md' : 'hover:bg-white/70'
-            }`}
-          >
-            {item}
-          </a>
-        ))}
-      </nav>
-    </div>
+    <>
+      <div className="flex justify-center w-full">
+        <nav className="relative flex justify-center items-center gap-1 rounded-full p-4 bg-gray-100 w-80 text-sm">
+          {navItems.map((item) => (
+            <div key={item} className="relative hover:text-gray-400">
+              {selected === item && (
+                <motion.div
+                  layoutId="nav-highlight"
+                  className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-10 rounded-full bg-white shadow-md"
+                  transition={{ type: 'spring', stiffness: 500, damping: 60 }}
+                />
+              )}
+              <a
+                onClick={() => setSelected(item)}
+                className={`relative items-center cursor-pointer px-4 py-1 rounded-full transition duration-200 z-10 ${
+                  selected === item ? 'text-black' : ''
+                }`}
+              >
+                {item}
+              </a>
+            </div>
+          ))}
+        </nav>
+      </div>
+    </>
   );
 };
 
