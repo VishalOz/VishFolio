@@ -7,19 +7,26 @@ import toggleIcon from './assets/toggle.png';
 
 const Home = () => {
   const images = [ogdo, ogdo2];
+  const emojis = ["☀️", "🌙"];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
+
+  const [theme, setTheme] = useState("dark")
 
   const handleToggle = () => {
     setToggle(prev => !prev);
     setCurrentIndex(prev => (prev + 1) % images.length);
   };
 
+  const handleClick2 = () => {
+    theme === "dark" ? "emojis[0]" : "emojis[1]"
+  };
+
   return (
     <>
       <Nav />
-      <div className="grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] p-5 ml-27 mt-10">
+      <div className="grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10">
         <div className="row-span-2 col-span-3 bg-white rounded-4xl p-5 relative">
           
           {/* Toggle Button */}
@@ -64,8 +71,21 @@ const Home = () => {
         </div>
 
         {/* Empty Grid Boxes */}
-        <div className="row-span-2 col-span-2 bg-white rounded-4xl p-5" />
-        <div className="row-span-3 col-span-1 bg-white rounded-4xl p-5" />
+        <div className="row-span-2 col-span-1 bg-white rounded-4xl p-5 flex justify-center items-center">
+          <div className="flex justify-center items-center bg-gray-100 w-25 h-15 rounded-full cursor-pointer" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            <motion.div 
+            onClick={handleClick2}
+            className="bg-black w-15 h-15 rounded-full shadow-md"
+            layout
+            animate={{ x: theme === "dark" ? -20 : 20 }}  // move right 50px for "light"
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >{theme === "dark" ? emojis[1] : emojis[0]}</motion.div>
+          </div>
+        </div>
+
+
+
+        <div className="row-span-3 col-span-2 rounded-4xl p-5 bg-emerald-200"></div>
       </div>
     </>
   );
