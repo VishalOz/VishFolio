@@ -44,13 +44,13 @@ const Home = () => {
               src={images[currentIndex]}
               alt="DpImage"
               className="ml-4 w-30 h-37 mb-5 mt-2"
-              initial={{ rotate: -1, scale: 0.3, opacity: 0 }}
+              initial={{ rotate: 180, scale: 0.3, opacity: 0 }}
               animate={{
-                rotate: 360,
+                rotate: 0,
                 scale: 0.8,
                 opacity: 1
               }}
-              exit={{ rotate: 1, opacity: 0, scale: 0.3}}
+              exit={{ rotate: -180, opacity: 0, scale: 0.3}}
               transition={{ duration: 0.5 }}
             />
           </AnimatePresence>
