@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Nav from './Nav';
+import ogdo from './assets/ogdo.png';
+import ogdo2 from './assets/ogdo2.png';
+import toggleIcon from './assets/toggle.png';
 
 const Home = () => {
-  const images = [
-    '../src/assets/ogdo.png',
-    '../src/assets/ogdo2.png' 
-  ];
+  const images = [ogdo, ogdo2];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
@@ -29,7 +29,7 @@ const Home = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
-              src="toggle.png"
+              src={toggleIcon}
               className="w-4"
               animate={{ rotate: toggle ? 360 : 0 }}
               transition={{ duration: 0.5 }}
@@ -65,7 +65,7 @@ const Home = () => {
 
         {/* Empty Grid Boxes */}
         <div className="row-span-2 col-span-2 bg-white rounded-4xl p-5" />
-        <div className="row-span-2 col-span-1 bg-white rounded-4xl p-5" />
+        <div className="row-span-3 col-span-1 bg-white rounded-4xl p-5" />
       </div>
     </>
   );
