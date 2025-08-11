@@ -3,8 +3,8 @@ import Folio from './assets/siri.gif'
 
 const Projects = () => {
   return (
-    <div className="transform rotate-10">
-      <div className={`flex flex-col justify-center items-center p-4 bg-purple-50 w-64 h-110 rounded-3xl shadow-xl hover:rotate-3 transition-transform duration-300
+    <div className="transform rotate-30">
+      <div className={`flex flex-col justify-center items-center p-4 bg-purple-50 w-64 h-110 rounded-3xl shadow-xl
         `}>
         <img src={Folio} alt="Project preview" className="w-20 h-20 object-cover mb-4 rounded-full shadow-md" />
         <h1 className="font-bold text-lg mb-2">View the Projects</h1>
