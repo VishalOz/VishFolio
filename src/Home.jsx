@@ -23,7 +23,7 @@ const Home = () => {
     <>
       <Nav />
       <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
-        <div className={`${theme ==='dark' ? 'bg-black' : "bg-white "} row-span-2 col-span-3 bg-white rounded-4xl p-5 relative `}>
+        <div className={` row-span-2 col-span-3 bg-white rounded-4xl p-5 relative `}>
           
           {/* Toggle Button */}
           <motion.button
@@ -71,7 +71,8 @@ const Home = () => {
           
         </div>
 
-        <div className="row-span-3 col-span-2 rounded-4xl p-5 bg-emerald-200 flex items-end justify-end relative overflow-hidden">
+        <div className={`row-span-3 col-span-2 rounded-4xl p-5  flex items-end justify-end relative overflow-hidden
+          ${theme ==='dark' ? 'bg-emerald-800' : "bg-emerald-200 "}`}>
           <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-300 rounded-full opacity-30"></div>
           <div className="absolute top-1/3 left-1/4 w-14 h-14 bg-emerald-400 rounded-full opacity-40"></div>
           <div className="absolute bottom-20 left-16 w-24 h-24 bg-emerald-500 rounded-full opacity-25"></div>
@@ -89,11 +90,11 @@ const Home = () => {
         </div>
 
         <div className="flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 bg-white">
-          <div className="flex justify-center items-center bg-gray-100 w-25 h-15 rounded-full cursor-pointer" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          <div className={`${theme === 'dark' ? 'bg-gray-100' : 'bg-black' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              className="bg-black w-15 h-15 rounded-full shadow-md"
+              className={`${theme === 'dark' ? 'bg-black' : 'bg-white' } w-15 h-15 rounded-full shadow-md`}
               layout
-              animate={{ x: theme === "dark" ? -20 : 20 }}  
+              animate={{ x: theme === "light" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             ></motion.div>
             </div>
