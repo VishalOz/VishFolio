@@ -5,6 +5,7 @@ import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import Projects from './Projects';
+import Median from './Median';
 
 const Home = () => {
   const images = [ogdo, ogdo2];
@@ -12,7 +13,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
 
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("light")
 
   useEffect(() => {
     if (theme === "dark") {
@@ -31,7 +32,7 @@ const Home = () => {
     <>
       <Nav />
       <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
-        <div className={`${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'} row-span-2 col-span-3 rounded-4xl p-5 relative `}>
+        <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'} row-span-2 col-span-3 rounded-4xl p-5 relative `}>
           
           {/* Toggle Button */}
           <motion.button
@@ -76,30 +77,33 @@ const Home = () => {
         </div>
 
         {/* Empty Grid Boxes */}
-        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
           
         </div>
 
         <div className={`row-span-3 col-span-2 rounded-4xl p-5  flex items-end justify-end relative overflow-hidden
-          ${theme ==='dark' ? 'bg-black border border-white' : "bg-emerald-200 "}`}>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute top-10 left-10 w-20 h-20 rounded-full opacity-40`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute top-1/3 left-1/4 w-14 h-14 rounded-full opacity-40`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute bottom-20 left-16 w-24 h-24 rounded-full opacity-45`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300 border-3"} absolute top-5 right-20 w-16 h-16 rounded-full opacity-20`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute bottom-1/3 right-40 w-32 h-8 rotate-12 opacity-40`}></div>
+          ${theme ==='dark' ? 'bg-black border border-gray-300' : "bg-emerald-200 "}`}>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-10 left-10 w-20 h-20 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-1/3 left-1/4 w-14 h-14 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute bottom-20 left-16 w-24 h-24 rounded-full opacity-45`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400 border-rose-700 border-3"} absolute top-5 right-20 w-16 h-16 rounded-full opacity-20`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute bottom-1/3 right-40 w-32 h-8 rotate-12 opacity-40`}></div>
           <Projects />
         </div>
 
-        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
-
+        <div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
+        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-200'} overflow-hidden`}>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1 left-1/2 w-100 h-120 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1/2 right-1/2 w-60 h-60 rounded-full opacity-40`}></div>
+          <Median />
         </div>
 
-        <div className={`row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
 
         </div>
 
         <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
-          <div className={`${theme === 'dark' ? 'bg-black border border-white' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
               className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } w-15 h-15 rounded-full shadow-md`}
               layout
