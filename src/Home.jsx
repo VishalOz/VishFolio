@@ -70,7 +70,7 @@ const Home = () => {
 
           {/* Description */}
           <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-            I am <span className="font-bold  text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
+            I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
           </p>
@@ -98,7 +98,11 @@ const Home = () => {
           <Median />
         </div>
 
-        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <div className={`row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+
+        </div>
+
+        <div className={`row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
 
         </div>
 
@@ -111,6 +115,15 @@ const Home = () => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             ></motion.div>
             </div>
+        </div>
+
+        <div className={`row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+
+        </div>
+
+        <div className={`flex justify-center row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-900'}`}>
+            <span>Shall I keep you in the Loop ?</span>
+            <p className={`${theme === "dark" ? "text-white" : "text-gray-600" } text-sm text-gray-600 text-center mb-4 px-2`}>Content includes articles, early access to products, and ongoing learnings</p>
         </div>
 
 
