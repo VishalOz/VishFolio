@@ -9,7 +9,7 @@ const Nav = () => {
   return (
     <>
       <div className="flex justify-center w-full">
-        <nav className="relative flex justify-center items-center gap-1 rounded-full p-4 bg-gray-200 w-80 text-sm">
+        <nav className={`relative flex justify-center items-center gap-1 bg-gray-200 rounded-full p-4 w-80 text-sm`}>
           {navItems.map((item) => (
             <div key={item} className="relative hover:text-gray-400">
               {selected === item && (
