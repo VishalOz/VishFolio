@@ -4,10 +4,10 @@ import Nav from './Nav';
 import ogdo from './assets/ogdo.png';
 import ogdo2 from './assets/ogdo2.png';
 import toggleIcon from './assets/toggle.png';
+import Projects from './Projects';
 
 const Home = () => {
   const images = [ogdo, ogdo2];
-  const emojis = ["☀️", "🌙"];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
@@ -72,20 +72,40 @@ const Home = () => {
 
         {/* Empty Grid Boxes */}
         <div className="row-span-2 col-span-1 bg-white rounded-4xl p-5 flex justify-center items-center">
+          
+        </div>
+
+        <div className="row-span-3 col-span-2 rounded-4xl p-5 bg-emerald-200 flex items-end justify-end relative overflow-hidden">
+          <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-300 rounded-full opacity-30"></div>
+          <div className="absolute top-1/3 left-1/4 w-14 h-14 bg-emerald-400 rounded-full opacity-40"></div>
+          <div className="absolute bottom-20 left-16 w-24 h-24 bg-emerald-500 rounded-full opacity-25"></div>
+          <div className="absolute top-5 right-20 w-16 h-16 border-4 border-emerald-400 rounded-full opacity-50"></div>
+          <div className="absolute bottom-1/3 right-40 w-32 h-8 bg-emerald-300 rotate-12 opacity-20"></div>
+          <Projects />
+        </div>
+
+        <div className="row-span-1 col-span-1 rounded-4xl p-5 bg-white">
+
+        </div>
+
+        <div className="row-span-1 col-span-2 rounded-4xl p-5 bg-white">
+
+        </div>
+
+        <div className="flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 bg-white">
           <div className="flex justify-center items-center bg-gray-100 w-25 h-15 rounded-full cursor-pointer" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-            <motion.div 
-            onClick={handleClick2}
-            className="bg-black w-15 h-15 rounded-full shadow-md"
-            layout
-            animate={{ x: theme === "dark" ? -20 : 20 }}  // move right 50px for "light"
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >{theme === "dark" ? emojis[1] : emojis[0]}</motion.div>
-          </div>
+              <motion.div 
+              onClick={handleClick2}
+              className="bg-black w-15 h-15 rounded-full shadow-md"
+              layout
+              animate={{ x: theme === "dark" ? -20 : 20 }}  // move right 50px for "light"
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            ></motion.div>
+            </div>
         </div>
 
 
 
-        <div className="row-span-3 col-span-2 rounded-4xl p-5 bg-emerald-200"></div>
       </div>
     </>
   );
