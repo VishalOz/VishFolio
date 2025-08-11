@@ -12,8 +12,14 @@
 }
 body {
     padding: 30px;
-    background-color: rgb(240, 242, 244);
-}
+    background-color: rgb(240, 242, 244); /* light mode */
+    transition: background-color 0.3s ease;
+  }
+  
+  body.dark {
+    background-color: rgb(18, 18, 20); /* dark mode */
+  }
+  
 h4 {
     font-family: "Alfa Slab One", serif;
     font-weight: 50;
