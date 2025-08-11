@@ -19,15 +19,11 @@ const Home = () => {
     setCurrentIndex(prev => (prev + 1) % images.length);
   };
 
-  const handleClick2 = () => {
-    theme === "dark" ? "emojis[0]" : "emojis[1]"
-  };
-
   return (
     <>
       <Nav />
-      <div className="grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10">
-        <div className="row-span-2 col-span-3 bg-white rounded-4xl p-5 relative">
+      <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
+        <div className={`${theme ==='dark' ? 'bg-black' : "bg-white "} row-span-2 col-span-3 bg-white rounded-4xl p-5 relative `}>
           
           {/* Toggle Button */}
           <motion.button
@@ -95,10 +91,9 @@ const Home = () => {
         <div className="flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 bg-white">
           <div className="flex justify-center items-center bg-gray-100 w-25 h-15 rounded-full cursor-pointer" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              onClick={handleClick2}
               className="bg-black w-15 h-15 rounded-full shadow-md"
               layout
-              animate={{ x: theme === "dark" ? -20 : 20 }}  // move right 50px for "light"
+              animate={{ x: theme === "dark" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             ></motion.div>
             </div>
