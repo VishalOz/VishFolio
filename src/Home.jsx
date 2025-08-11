@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Nav from './Nav';
-import ogdo from './assets/ogdo.png';
-import ogdo2 from './assets/ogdo2.png';
+import ogdo from './assets/ogdo-2.png';
+import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import Projects from './Projects';
 
@@ -14,6 +14,14 @@ const Home = () => {
 
   const [theme, setTheme] = useState("dark")
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [theme]);
+
   const handleToggle = () => {
     setToggle(prev => !prev);
     setCurrentIndex(prev => (prev + 1) % images.length);
@@ -23,7 +31,7 @@ const Home = () => {
     <>
       <Nav />
       <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
-        <div className={` row-span-2 col-span-3 bg-white rounded-4xl p-5 relative `}>
+        <div className={`${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'} row-span-2 col-span-3 rounded-4xl p-5 relative `}>
           
           {/* Toggle Button */}
           <motion.button
@@ -33,11 +41,12 @@ const Home = () => {
           >
             <motion.img
               src={toggleIcon}
-              className="w-4"
+              className={`w-4`}
               animate={{ rotate: toggle ? 360 : 0 }}
+              shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
             />
-            Toggle Lockdown
+            <p className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>Toggle Lockdown</p>
           </motion.button>
 
           {/* Main Image with Effects */}
@@ -59,7 +68,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className="text-md leading-relaxed text-gray-700 mb-4">
+          <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold  text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -67,32 +76,32 @@ const Home = () => {
         </div>
 
         {/* Empty Grid Boxes */}
-        <div className="row-span-2 col-span-1 bg-white rounded-4xl p-5 flex justify-center items-center">
+        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           
         </div>
 
         <div className={`row-span-3 col-span-2 rounded-4xl p-5  flex items-end justify-end relative overflow-hidden
-          ${theme ==='dark' ? 'bg-emerald-800' : "bg-emerald-200 "}`}>
-          <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-300 rounded-full opacity-30"></div>
-          <div className="absolute top-1/3 left-1/4 w-14 h-14 bg-emerald-400 rounded-full opacity-40"></div>
-          <div className="absolute bottom-20 left-16 w-24 h-24 bg-emerald-500 rounded-full opacity-25"></div>
-          <div className="absolute top-5 right-20 w-16 h-16 border-4 border-emerald-400 rounded-full opacity-50"></div>
-          <div className="absolute bottom-1/3 right-40 w-32 h-8 bg-emerald-300 rotate-12 opacity-20"></div>
+          ${theme ==='dark' ? 'bg-black border border-white' : "bg-emerald-200 "}`}>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute top-10 left-10 w-20 h-20 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute top-1/3 left-1/4 w-14 h-14 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute bottom-20 left-16 w-24 h-24 rounded-full opacity-45`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300 border-3"} absolute top-5 right-20 w-16 h-16 rounded-full opacity-20`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-emerald-300"} absolute bottom-1/3 right-40 w-32 h-8 rotate-12 opacity-40`}></div>
           <Projects />
         </div>
 
-        <div className="row-span-1 col-span-1 rounded-4xl p-5 bg-white">
+        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
 
         </div>
 
-        <div className="row-span-1 col-span-2 rounded-4xl p-5 bg-white">
+        <div className={`row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
 
         </div>
 
-        <div className="flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 bg-white">
-          <div className={`${theme === 'dark' ? 'bg-gray-100' : 'bg-black' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+          <div className={`${theme === 'dark' ? 'bg-black border border-white' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              className={`${theme === 'dark' ? 'bg-black' : 'bg-white' } w-15 h-15 rounded-full shadow-md`}
+              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } w-15 h-15 rounded-full shadow-md`}
               layout
               animate={{ x: theme === "light" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
