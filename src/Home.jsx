@@ -102,8 +102,24 @@ const Home = () => {
 
         </div>
 
-        <div className={`row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-
+        <div className={`row-span-2 col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+          <div className="flex justify-center">
+            <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
+          </div>
+          <div className={`flex justify-center w-130`}>
+            <p className={`text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
+            I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
+            My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
+            </p>
+          </div>
+          <div className={`flex justify-end text-gray-600 font-bold`}>
+            <p>Tue 12, Aug</p>
+          </div>
+          <div>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-100 hover:border-gray-400" : "bg-white text-black border border-gray-100"}w-25 px-3 py-1 rounded-full text-sm`}>
+              Read more
+            </button>
+          </div>
         </div>
 
         <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
@@ -118,12 +134,20 @@ const Home = () => {
         </div>
 
         <div className={`row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-
+            
         </div>
 
-        <div className={`flex justify-center row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-900'}`}>
-            <span>Shall I keep you in the Loop ?</span>
-            <p className={`${theme === "dark" ? "text-white" : "text-gray-600" } text-sm text-gray-600 text-center mb-4 px-2`}>Content includes articles, early access to products, and ongoing learnings</p>
+        <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-900'}`}>
+            <div className={`flex justify-center mb-7`}>
+              <span>Shall I keep you in the Loop ?</span>
+            </div>
+            <div>
+              <p className={`${theme === "dark" ? "text-white" : "text-gray-600" } text-md text-gray-600 text-center mb-7 px-2`}>Content includes articles, early access to products, and ongoing learnings</p>
+            </div>
+            <div className={`flex justify-center`}>
+              <input 
+              placeholder="Email address ..."/>
+            </div>
         </div>
 
 
