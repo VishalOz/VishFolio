@@ -83,11 +83,8 @@ const Home = () => {
 
         <div className={`row-span-3 col-span-2 rounded-4xl p-5  flex items-end justify-end relative overflow-hidden
           ${theme ==='dark' ? 'bg-black border border-gray-300' : "bg-emerald-200 "}`}>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-10 left-10 w-20 h-20 rounded-full opacity-40`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-1/3 left-1/4 w-14 h-14 rounded-full opacity-40`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute bottom-20 left-16 w-24 h-24 rounded-full opacity-45`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400 border-rose-700 border-3"} absolute top-5 right-20 w-16 h-16 rounded-full opacity-20`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute bottom-1/3 right-40 w-32 h-8 rotate-12 opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-10 right-1/2 w-80 h-90 rounded-full opacity-50`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-1/3 left-1/2 w-80 h-80 rounded-full opacity-50`}></div>
           <Projects />
         </div>
 
@@ -96,6 +93,11 @@ const Home = () => {
           <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1 left-1/2 w-100 h-120 rounded-full opacity-40`}></div>
           <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1/2 right-1/2 w-60 h-60 rounded-full opacity-40`}></div>
           <Median />
+          <div className={`absolute bottom-3 right-3`}>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+              Read more
+            </button>
+          </div>
         </div>
 
         <div className={`row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
@@ -116,7 +118,7 @@ const Home = () => {
             <p>Tue 12, Aug</p>
           </div>
           <div>
-            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-100 hover:border-gray-400" : "bg-white text-black border border-gray-100"}w-25 px-3 py-1 rounded-full text-sm`}>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
               Read more
             </button>
           </div>
@@ -133,11 +135,15 @@ const Home = () => {
             </div>
         </div>
 
-        <div className={`row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-            
+        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+          
         </div>
 
-        <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-900'}`}>
+        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'} opacity-70`}>
+            <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-300"} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90`}></div>
+        </div>
+
+        <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-700'} `}>
             <div className={`flex justify-center mb-7`}>
               <span>Shall I keep you in the Loop ?</span>
             </div>
