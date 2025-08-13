@@ -6,6 +6,7 @@ import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import Projects from './Projects';
 import Median from './Median';
+import Sm from './Sm';
 
 const Home = () => {
   const images = [ogdo, ogdo2];
@@ -85,7 +86,14 @@ const Home = () => {
           ${theme ==='dark' ? 'bg-black border border-gray-300' : "bg-emerald-200 "}`}>
           <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-10 right-1/2 w-80 h-90 rounded-full opacity-50`}></div>
           <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-pink-400"} absolute top-1/3 left-1/2 w-80 h-80 rounded-full opacity-50`}></div>
-          <Projects />
+          <div className={`absolute right-1/4`}>
+            <Projects />
+          </div>
+          <div className={`absolute bottom-3 right-3`}>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-30 px-2 py-1 rounded-full text-sm`}>
+              View Projects
+            </button>
+          </div>
         </div>
 
         <div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
@@ -100,7 +108,11 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={`row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+
+        </div>
+
+        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
 
         </div>
 
@@ -114,7 +126,7 @@ const Home = () => {
             My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
             </p>
           </div>
-          <div className={`flex justify-end text-gray-600 font-bold`}>
+          <div className={`flex justify-end text-gray-500 font-bold`}>
             <p>Tue 12, Aug</p>
           </div>
           <div>
@@ -140,7 +152,10 @@ const Home = () => {
         </div>
 
         <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'} opacity-70`}>
-            <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-300"} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90`}></div>
+            <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-300"} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90 `}></div>
+            <div className={`absolute justify-center items-center absolute right-1`}>
+              <Sm />
+            </div>
         </div>
 
         <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-700'} `}>

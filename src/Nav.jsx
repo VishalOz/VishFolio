@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Nav = () => {
-  const [selected, setSelected] = useState('Home');
+  const [selected, setSelected] = useState('All');
 
-  const navItems = ['Home', 'About', 'Projects', 'Media'];
+  const navItems = ['All', 'About', 'Projects', 'Media'];
 
   return (
     <>
