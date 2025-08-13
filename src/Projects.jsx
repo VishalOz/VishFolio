@@ -11,7 +11,7 @@ const Projects = () => {
         <p className="text-sm text-gray-600 text-center mb-4 px-2">
           These are some projects that I've been working on. Click the button to view them.
         </p>
-        <button className="bg-pink-400 px-6 py-2 rounded-lg text-white font-bold shadow-md hover:bg-pink-500 transition">
+        <button className="bg-pink-400 px-6 py-2 rounded-lg text-white font-bold shadow-md">
           Projects
         </button>
       </div>
