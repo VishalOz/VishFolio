@@ -4,6 +4,8 @@ import Nav from './Nav';
 import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
+import gh from './assets/gh.png';
+import gh2 from './assets/gh2.png';
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -108,12 +110,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-
-        </div>
-
-        <div className={`row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-
+        <div className={`flex justify-center items-center row-span-1 col-span-2 rounded-4xl p-5 
+        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+          
         </div>
 
         <div className={`row-span-2 col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
@@ -137,6 +136,15 @@ const Home = () => {
         </div>
 
         <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={gh2}
+              alt="GitHub Logo"
+              className={`w-25 h-25 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
+          </a>
+        </div>
+
+        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
               className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } w-15 h-15 rounded-full shadow-md`}
@@ -147,29 +155,46 @@ const Home = () => {
             </div>
         </div>
 
-        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
-          
-        </div>
-
-        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'} opacity-70`}>
-            <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-300"} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90 `}></div>
-            <div className={`absolute justify-center items-center absolute right-1`}>
+        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}>
+            <div className={`${theme ==='dark' ? 'bg-white border border-white' : "bg-rose-300"} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90 `}></div>
+            <div className={`${theme === 'dark' ? 'bg-white':'bg-white'}absolute justify-center items-center left-1`}>
               <Sm />
             </div>
         </div>
 
-        <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white' : 'bg-white text-gray-700'} `}>
-            <div className={`flex justify-center mb-7`}>
-              <span>Shall I keep you in the Loop ?</span>
+        <div className={`row-span-2 col-span-3 text-xl rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
+          : 'bg-white text-gray-700 shadow-lg'}`}>
+              {/* Title */}
+            <div className="flex justify-center mb-6">
+              <span className="font-semibold tracking-wide">
+                Shall I keep you in the Loop?
+              </span>
             </div>
+
+              {/* Description */}
             <div>
-              <p className={`${theme === "dark" ? "text-white" : "text-gray-600" } text-md text-gray-600 text-center mb-7 px-2`}>Content includes articles, early access to products, and ongoing learnings</p>
+              <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} text-md text-center mb-7 px-3 leading-relaxed`}>
+                Content includes articles, early access to products, and ongoing
+                learnings.
+              </p>
             </div>
-            <div className={`flex justify-center`}>
-              <input 
-              placeholder="Email address ..."/>
+
+              {/* Email Input */}
+            <div className="flex justify-center">
+              <div className="flex w-full max-w-md rounded-full overflow-hidden border border-gray-300 focus-within:border-gray-500 transition-all duration-300">
+                <input
+                  type="email"
+                  placeholder="Email address..."
+                  className={`flex-1 px-5 py-3 text-sm outline-none ${
+                    theme === 'dark'
+                      ? 'bg-black text-white placeholder-gray-400'
+                      : 'bg-white text-gray-700 placeholder-gray-500'
+                  }`}
+                />
+              </div>
             </div>
-        </div>
+  </div>
+
 
 
 
