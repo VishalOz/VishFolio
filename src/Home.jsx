@@ -18,6 +18,8 @@ const Home = () => {
 
   const [selected, setSelected] = useState('All');
 
+  const [showDetail, setShowDetail] = useState(false);
+
   const isActive = (category) => {
     return selected === "All" || selected === category;
   }
@@ -95,15 +97,15 @@ const Home = () => {
 
         <motion.div
           className={`row-span-3 col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
-          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-200'}`}
+          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
           animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
 
-          <div className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-400'}
+          <div className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-600'}
             absolute top-10 right-1/2 w-80 h-90 rounded-full opacity-50`}></div>
           
           <div
-            className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-400'} 
+            className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-600'} 
               absolute top-1/3 left-1/2 w-80 h-80 rounded-full opacity-50`}>
           </div>
           
@@ -124,11 +126,11 @@ const Home = () => {
         </motion.div>
 
         <motion.div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
-        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-200'} overflow-hidden`}
+        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1 left-1/2 w-100 h-120 rounded-full opacity-40`}></div>
-          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-400"} absolute top-1/2 right-1/2 w-60 h-60 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-600"} absolute top-1 left-1/2 w-100 h-120 rounded-full opacity-40`}></div>
+          <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-600"} absolute top-1/2 right-1/2 w-60 h-60 rounded-full opacity-40`}></div>
           <Median />
           <div className={`absolute bottom-3 right-3`}>
             <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
@@ -188,7 +190,7 @@ const Home = () => {
             </div>
         </div>
 
-        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}>
+        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-300'}`}>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90`}></div>
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
             <Sm />
