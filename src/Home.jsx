@@ -20,6 +20,8 @@ const Home = () => {
 
   const [showDetail, setShowDetail] = useState(false);
 
+  const[userInput, setUserInput] = useState("");
+
   const isActive = (category) => {
     return selected === "All" || selected === category;
   }
@@ -229,16 +231,17 @@ const Home = () => {
             </div>
         </div>
 
-        <div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-300'}`}>
+        <motion.div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+        animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90`}></div>
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
             <Sm />
           </div>
-        </div>
+        </motion.div>
 
         <motion.div className={`row-span-2 col-span-3 text-xl rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
           : 'bg-white text-gray-700 shadow-lg'}`}
-          animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
+          animate={{opacity: isActive('') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{duration: 0.3, ease: 'easeInOut' }}>
             {/* Title */}
             <div className="flex justify-center mb-6">
@@ -246,7 +249,6 @@ const Home = () => {
                 Shall I keep you in the Loop?
               </span>
             </div>
-
               {/* Description */}
             <div>
               <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} text-md text-center mb-7 px-3 leading-relaxed`}>
@@ -254,20 +256,32 @@ const Home = () => {
                 learnings.
               </p>
             </div>
-
               {/* Email Input */}
             <div className="flex justify-center">
-              <div className="flex w-full max-w-md rounded-full overflow-hidden border border-gray-300 focus-within:border-gray-500 transition-all duration-300">
+              <div className="flex w-full max-w-md overflow-hidden transition-all duration-300">
                 <input
-                  type="email"
-                  placeholder="Email address..."
-                  className={`flex-1 px-5 py-3 text-sm outline-none ${
+                  type="text"
+                  value={userInput}
+                  onChange={e => setUserInput(e.target.value)}
+                  placeholder="Connect with me ..."
+                  className={`border-b-2 border-gray-200 bg-transparent flex-1 px-5 py-3 text-md  ${
                     theme === 'dark'
                       ? 'bg-black text-white placeholder-gray-400'
                       : 'bg-white text-gray-700 placeholder-gray-500'
                   }`}
                 />
               </div>
+            </div>
+            <div className={`flex-start mt-4`}>
+            <button 
+            onClick={() => {
+              const email = "oshadavishal392@gmail.com";
+              const subject = "Subscription";
+              const body = `User message: ${userInput}`;
+              window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }}
+            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 text-xl font-bold hover:opacity-70 rounded-full w-25 h-9 flex items-center justify-center
+            `}>Submit</button>
             </div>
         </motion.div>
      </div>
