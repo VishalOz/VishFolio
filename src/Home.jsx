@@ -146,27 +146,66 @@ const Home = () => {
           
         </div>
 
-        <motion.div className={`row-span-2 col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
-        animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
-          <div className="flex justify-center">
-              <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
-            </div>
-            <div className={`flex justify-center w-130`}>
-              <p className={`text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
-              I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
-              My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
+        
+
+        {/*   HOW IT STARTED AND HOW IT'S GOING.. */}
+        <AnimatePresence>
+          {!showDetail && (
+            <motion.div className={`row-span-2 col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+            animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
+              <div className="flex justify-center">
+                  <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
+                </div>
+                <div className={`flex justify-center w-130`}>
+                  <p className={`text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
+                  I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
+                  My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
+                  </p>
+                </div>
+                <div className={`flex justify-end text-gray-500 font-bold`}>
+                  <p>Tue 12, Aug</p>
+                </div>
+                <div>
+                  <button 
+                  onClick={() => setShowDetail(true)}
+                  className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+                    Read more
+                  </button>
+                </div>
+            </motion.div>
+          )}
+          {showDetail && (
+            <motion.div className={`fixed inset-0 z-50 p-10 overflow-auto ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-black'}`}
+              key="details"
+              initial={{opacity: 0, y: 50}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0, y: 100}}
+              transition={{duration: 0.3}}
+            >
+              <div className={`p-5`}>
+                <div className={`flex justify-center items-center mb-25`}>
+                  <button 
+                    onClick={() => setShowDetail(false)}
+                    className={`
+                      ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-gray-100 text-black`} text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center ml-4`}
+                  >
+                  ✕
+                  </button>
+                </div>
+                <span className="flex justify-center items-center text-2xl font-bold mb-6">How it started vs. How it's going</span>
+              </div>
+
+              <p className="leading-relaxed text-md px-10 ">
+              I was never the stereotypical “IT geek.” If I had to count the computer games I've played, I could do it on the fingers of my hands and feet and still have a few fingers left. My interests were always more in math, physics, and problem-solving. I wasn't the best at them, but I truly enjoyed the curiosity they sparked in me.
+              After many twists and turns in life, I chose to pursue computer science a field I hadn't touched in over 10 years. To my surprise, diving back into it brought back the same spark I once had when exploring math and physics.
+              Now, technology fuels that curiosity again. Every challenge feels like a puzzle waiting to be solved, and each solution opens the door to new possibilities. This is my journey so far and I'm excited to see where it takes me next.
               </p>
-            </div>
-            <div className={`flex justify-end text-gray-500 font-bold`}>
-              <p>Tue 12, Aug</p>
-            </div>
-            <div>
-              <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
-                Read more
-              </button>
-            </div>
-        </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
           
+
+
 
         <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
