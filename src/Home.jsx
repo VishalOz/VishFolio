@@ -42,10 +42,10 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
+      <div className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-3 w-full max-w-[1200px] mx-auto p-5 mt-10 auto-rows-fr`}>
         <motion.div 
         className={`row-span-2 col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
-          animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
+          animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
@@ -56,12 +56,12 @@ const Home = () => {
           >
             <motion.img
               src={toggleIcon}
-              className={`w-4`}
+              className={`w-5 h-5`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
             />
-            <p className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>Toggle Lockdown</p>
+            <p className={`${theme === 'dark' ? 'text-white' : 'text-black'} text-sm sm:text-base`}>Toggle Lockdown</p>
           </motion.button>
 
           {/* Main Image with Effects */}
@@ -70,7 +70,7 @@ const Home = () => {
               key={currentIndex} // Ensures image switches smoothly
               src={images[currentIndex]}
               alt="DpImage"
-              className="ml-4 w-30 h-37 mb-5 mt-2"
+              className="w-24 h-28 sm:w-30 sm:h-37 mb-5 ml-5 mt-10"
               initial={{ rotate: 180, scale: 0.3, opacity: 0 }}
               animate={{
                 rotate: 0,
@@ -88,7 +88,6 @@ const Home = () => {
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
           </p>
-
         </motion.div>
 
 
@@ -97,8 +96,10 @@ const Home = () => {
           
         </div>
 
+
+
         <motion.div
-          className={`row-span-3 col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
+          className={`row-span-1 col-span-1 sm:row-span-2 sm:col-span-2 lg:row-span-3 lg:col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
           animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
@@ -127,7 +128,9 @@ const Home = () => {
           </div>
         </motion.div>
 
-        <motion.div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
+
+
+        <motion.div className={`relative flex justify-center row-span-1 sm:row-span-2 lg:row-span-3 col-span-1 sm:col-span-2 lg:col-span-2 rounded-4xl p-5 
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -280,7 +283,7 @@ const Home = () => {
               const body = `User message: ${userInput}`;
               window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
-            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 text-xl font-bold hover:opacity-70 rounded-full w-25 h-9 flex items-center justify-center
+            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-xl font-bold hover:opacity-70 rounded-full w-25 h-9 flex items-center justify-center
             `}>Submit</button>
             </div>
         </motion.div>
