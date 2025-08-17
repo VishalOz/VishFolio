@@ -42,21 +42,21 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid grid-cols-6 grid-rows-7 gap-3 w-[1200px] h-[1190px] w-[610px] h-[600px] p-5 ml-27 mt-10`}>
+      <div className={`grid sm:grid-cols-2 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-2 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
         <motion.div 
-        className={`row-span-2 col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
           <motion.button
             onClick={handleToggle}
-            className="absolute w-43 mx-90 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200"
+            className="absolute sm:w-43 lg:w-43 lg:mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200"
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={toggleIcon}
-              className={`w-4`}
+              className={`sm:w-3 lg:w-4`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
@@ -70,7 +70,7 @@ const Home = () => {
               key={currentIndex} // Ensures image switches smoothly
               src={images[currentIndex]}
               alt="DpImage"
-              className="ml-4 w-30 h-37 mb-5 mt-2"
+              className="ml-4 sm:w-15 sm:h-20 lg:w-30 lg:h-37 sm:mb-1 lg:mb-5 mt-2"
               initial={{ rotate: 180, scale: 0.3, opacity: 0 }}
               animate={{
                 rotate: 0,
@@ -83,7 +83,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <p className={`lg:text-md sm:text-sm leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -93,12 +93,13 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-          
+        <div className={`sm:row-span-2 sm:col-span-1 lg:row-span-2 lg:col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+          <h1>This is just a test message</h1>
+          <h1>This is just a test message</h1>
         </div>
 
         <motion.div
-          className={`row-span-3 col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
+          className={`sm:row-span-4 sm:col-span-2  lg:row-span-3 lg:col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
           animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
