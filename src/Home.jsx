@@ -42,9 +42,9 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid sm:grid-cols-2 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-2 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
+      <div className={`grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-2 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
         <motion.div 
-        className={`sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`row-span-1 col-span-1 sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
