@@ -6,6 +6,7 @@ import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import gh from './assets/gh.png';
 import gh2 from './assets/gh2.png';
+import cw1 from './assets/cw1.png';
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -19,6 +20,7 @@ const Home = () => {
   const [selected, setSelected] = useState('All');
 
   const [showDetail, setShowDetail] = useState(false);
+  const [showDetail1, setShowDetail1] = useState(false);
 
   const[userInput, setUserInput] = useState("");
 
@@ -42,21 +44,21 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-2 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
+      <div className={`grid sm:grid-cols-6 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-3 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
         <motion.div 
-        className={`row-span-1 col-span-1 sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`sm:row-span-4 sm:col-span-2 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
           <motion.button
             onClick={handleToggle}
-            className="absolute sm:w-43 lg:w-43 lg:mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200"
+            className="absolute w-43 mx-90  flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200"
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={toggleIcon}
-              className={`sm:w-3 lg:w-4`}
+              className={`w-4`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
@@ -70,7 +72,7 @@ const Home = () => {
               key={currentIndex} // Ensures image switches smoothly
               src={images[currentIndex]}
               alt="DpImage"
-              className="ml-4 sm:w-15 sm:h-20 lg:w-30 lg:h-37 sm:mb-1 lg:mb-5 mt-2"
+              className="ml-4 w-30 h-37 mb-5 mt-2"
               initial={{ rotate: 180, scale: 0.3, opacity: 0 }}
               animate={{
                 rotate: 0,
@@ -83,7 +85,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className={`lg:text-md sm:text-sm leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -93,40 +95,166 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`sm:row-span-2 sm:col-span-1 lg:row-span-2 lg:col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
           <h1>This is just a test message</h1>
           <h1>This is just a test message</h1>
         </div>
 
-        <motion.div
-          className={`sm:row-span-4 sm:col-span-2  lg:row-span-3 lg:col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
-          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
-          animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}>
 
-          <div className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-600'}
-            absolute top-10 right-1/2 w-80 h-90 rounded-full opacity-50`}></div>
-          
-          <div
-            className={`${theme === 'dark' ? 'bg-white border border-white opacity-70' : 'bg-pink-600'} 
-              absolute top-1/3 left-1/2 w-80 h-80 rounded-full opacity-50`}>
-          </div>
-          
-          <div className="absolute right-1/4">
-            <Projects />
-          </div>
-          
-          <div className="absolute bottom-3 right-3">
-            <button
-              className={`${theme === 'dark'
-                ? 'bg-black text-white border border-gray-200'
-                : 'bg-white text-black border border-gray-200'} 
-                hover:border-gray-400 transition duration-300 w-30 px-2 py-1 rounded-full text-sm`}
+
+
+        <AnimatePresence>
+          {!showDetail1 && (
+            <motion.div
+              className={`row-span-3 col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
+              ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
+              animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              View Projects
-            </button>
-          </div>
-        </motion.div>
+              {/* Background Circles */}
+              <div className={`${theme === 'dark' ? 'bg-white opacity-20' : 'bg-pink-600 opacity-50'}
+                absolute top-10 right-1/2 w-72 h-72 rounded-full`}></div>
+              <div className={`${theme === 'dark' ? 'bg-white opacity-20' : 'bg-pink-600 opacity-50'} 
+                absolute top-1/3 left-1/2 w-64 h-64 rounded-full`}></div>
+
+              {/* Project Component */}
+              <div className="absolute right-1/4 bottom-16">
+                <Projects />
+              </div>
+
+              {/* Button */}
+              <div className="absolute bottom-3 right-3">
+                <button
+                  onClick={() => setShowDetail1(true)}
+                  className={`${theme === 'dark'
+                    ? 'bg-black text-white border border-gray-200'
+                    : 'bg-white text-black border border-gray-200'} 
+                    hover:border-gray-400 transition duration-300 px-3 py-1 rounded-full text-sm`}
+                >
+                  View Projects
+                </button>
+              </div>
+            </motion.div>
+          )}
+          {showDetail1 && (
+            <motion.div
+              className={`fixed inset-0 z-50 p-10 overflow-auto flex flex-col 
+              ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-100 text-black'}`}
+              key="project-details"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <div className="flex justify-center mb-6">
+                <button
+                  onClick={() => setShowDetail1(false)}
+                  className={`${theme === 'dark' ? 'bg-gray-200 text-black': 'bg-white text-black'} 
+                    text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center`} >
+                  ✕
+                </button>
+              </div>
+              {/* Project Details */}
+              <div className="space-y-4 mt-25">
+                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+                  : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
+                  <div className="col-span-1 flex justify-center items-center">
+                    <img
+                      src={cw1}
+                      alt="PROJECT1"
+                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                
+                <div className="col-span-1 flex flex-col justify-between pl-4">
+                  <div>
+                    <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
+                    <p className="text-sm opacity-80 mt-2">
+                      A simple traffic visualization project with CSV + Tkinter histograms.
+                    </p>
+                  </div>
+                  <div className="flex gap-4 mt-4">
+                    <button
+                      className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
+                      bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
+                      hover:opacity-90 transition-all"
+                    >  Live </button>
+                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all">GitHub</button>
+                      </div>
+                  </div>
+                </div>
+
+                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+                  : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
+                  <div className="col-span-1 flex justify-center items-center">
+                    <img
+                      src={cw1}
+                      alt="PROJECT1"
+                      className="w-90 h-70 object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                
+                <div className="col-span-1 flex flex-col justify-between pl-4">
+                  <div>
+                    <span className="text-xl font-semibold tracking-relaxed">Reliv</span>
+                    <p className="text-sm opacity-80 mt-2">
+                      A simple traffic visualization project with CSV + Tkinter histograms.
+                    </p>
+                  </div>
+                  <div className="flex gap-4 mt-4">
+                    <button
+                      className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
+                      bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
+                      hover:opacity-90 transition-all"
+                    >  Live </button>
+                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all">GitHub</button>
+                      </div>
+                  </div>
+                </div>
+
+                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+                  : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
+                  <div className="col-span-1 flex justify-center items-center">
+                    <img
+                      src={cw1}
+                      alt="PROJECT1"
+                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                
+                <div className="col-span-1 flex flex-col justify-between pl-4">
+                  <div>
+                    <span className="text-xl font-semibold tracking-relaxed">Traffic Data Program</span>
+                    <p className="text-sm opacity-80 mt-2">
+                      A simple traffic visualization project with CSV + Tkinter histograms.
+                    </p>
+                  </div>
+                  <div className="flex gap-4 mt-4">
+                    <button
+                      className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
+                      bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
+                      hover:opacity-90 transition-all"
+                    >  Live </button>
+                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all">GitHub</button>
+                      </div>
+                  </div>
+                </div>
+
+                
+                
+                  
+                
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+
+
 
         <motion.div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
