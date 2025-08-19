@@ -22,6 +22,7 @@ const Home = () => {
 
   const [showDetail, setShowDetail] = useState(false);
   const [showDetail1, setShowDetail1] = useState(false);
+  const [showDetail2, setShowDetail2] = useState(false);
 
   const[userInput, setUserInput] = useState("");
 
@@ -353,10 +354,47 @@ const Home = () => {
         </AnimatePresence>
           
 
-        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 
-        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-          
-        </div>
+        <AnimatePresence>
+          {!showDetail2 && (
+            <motion.div
+            className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 
+            ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+            
+            >
+              <button 
+                  onClick={() => setShowDetail2(true)}
+                  className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+                    Ai Bota
+                  </button>
+            </motion.div>
+          )}
+          {showDetail2 && (
+            <motion.div className={`fixed inset-0 z-50 p-10 overflow-auto ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-black'}`}
+            key="details"
+            initial={{opacity: 0, y: 50}}
+            animate={{opacity: 1, y: 0}}
+            exit={{opacity: 0, y: 100}}
+            transition={{duration: 0.3}}
+          >
+            <div className={`p-5`}>
+              <div className={`flex justify-center items-center mb-25`}>
+                <button 
+                  onClick={() => setShowDetail2(false)}
+                  className={`
+                    ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-gray-100 text-black`} text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center ml-4`}
+                >
+                ✕
+                </button>
+              </div>
+              <span className="flex justify-center items-center text-2xl font-bold mb-6">Bad Timing</span>
+            </div>
+
+            <p className="leading-relaxed text-md px-10 ">
+             Ai Feature wil be launch soon.
+            </p>
+          </motion.div>
+          )}
+        </AnimatePresence>
 
         
 
@@ -373,10 +411,17 @@ const Home = () => {
 
         <motion.div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
-          <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full opacity-90`}></div>
+          <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
+          <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
             <Sm />
           </div>
+          <div className={`absolute bottom-3 right-3`}>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-29 px-3 py-1 rounded-full text-sm`}>
+              Visit Designs
+            </button>
+          </div>
+          
         </motion.div>
 
         <motion.div className={`row-span-2 col-span-3 text-xl rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
@@ -420,7 +465,7 @@ const Home = () => {
               const body = `User message: ${userInput}`;
               window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
-            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-xl font-bold hover:opacity-70 rounded-full w-25 h-9 flex items-center justify-center
+            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 rounded-full w-25 h-7 flex items-center justify-center
             `}>Submit</button>
             </div>
         </motion.div>

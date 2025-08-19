@@ -1,5 +1,6 @@
 import React from 'react';
 import Folio from './assets/siri.gif'
+import Set from './assets/settings.gif'
 
 const Projects = () => {
   return (
