@@ -48,19 +48,19 @@ const Home = () => {
       <Nav selected={selected} setSelected={setSelected}/>
       <div className={`grid sm:grid-cols-6 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-3 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
         <motion.div 
-        className={`sm:row-span-4 sm:col-span-6 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
           <motion.button
             onClick={handleToggle}
-            className={`absolute w-43 mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200`}
+            className={`absolute w-43 lg:mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200`}
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={toggleIcon}
-              className={`w-4 ${theme === 'dark' ? 'filter invert' : ''}`}
+              className={`sm:w-5 lg:w-4 ${theme === 'dark' ? 'filter invert' : ''}`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
@@ -97,7 +97,7 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`row-span-2 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <div className={`lg:row-span-2 lg:col-span-1 sm:col-span-2 sm:row-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
           
         </div>
 
@@ -108,7 +108,7 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`row-span-3 col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
+              className={`lg:row-span-3 lg:col-span-2 sm:row-span-5 sm:col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -273,25 +273,25 @@ const Home = () => {
         </motion.div>
           
         
-        <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-2 lg:row-span-1 lg:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
               <img 
                 src={In}
                 alt="LinkedIn"
-                className={`w-40 h-36 cursor-pointer`} />
+                className={`lg:w-40 lg:h-36 sm:h-25 cursor-pointer`} />
             </a>
         </motion.div>
 
-        <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-2 lg:row-span-1 lg:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
              <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
               <img
                 src={gh2}
                 alt="GitHub Logo"
-                className={`w-25 h-25 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
+                className={`lg:w-25 lg:h-25 sm:w-17 sm:h-17 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
             </a>
         </motion.div>
 
