@@ -48,19 +48,19 @@ const Home = () => {
       <Nav selected={selected} setSelected={setSelected}/>
       <div className={`grid sm:grid-cols-6 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-3 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
         <motion.div 
-        className={`sm:row-span-4 sm:col-span-2 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`sm:row-span-4 sm:col-span-6 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
           <motion.button
             onClick={handleToggle}
-            className="absolute w-43 mx-90  flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200"
+            className={`absolute w-43 mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200`}
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={toggleIcon}
-              className={`w-4`}
+              className={`w-4 ${theme === 'dark' ? 'filter invert' : ''}`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
