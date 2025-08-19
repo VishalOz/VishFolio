@@ -7,6 +7,7 @@ import toggleIcon from './assets/toggle.png';
 import gh from './assets/gh.png';
 import gh2 from './assets/gh2.png';
 import cw1 from './assets/cw1.png';
+import In from './assets/in.png.webp'
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -95,10 +96,10 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`row-span-2 col-span-1 rounded-4xl p-5 flex justify-center items-center ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-          <h1>This is just a test message</h1>
-          <h1>This is just a test message</h1>
+        <div className={`row-span-2 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+          
         </div>
+
 
 
 
@@ -271,11 +272,27 @@ const Home = () => {
         </motion.div>
           
         
+        <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+          animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
+              <img 
+                src={In}
+                alt="LinkedIn"
+                className={`w-40 h-36 cursor-pointer`} />
+            </a>
+        </motion.div>
 
-        <div className={`flex justify-center items-center row-span-1 col-span-2 rounded-4xl p-5 
-        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-          
-        </div>
+        <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+          animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}>
+             <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={gh2}
+                alt="GitHub Logo"
+                className={`w-25 h-25 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
+            </a>
+        </motion.div>
 
         
 
@@ -336,18 +353,12 @@ const Home = () => {
         </AnimatePresence>
           
 
+        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 
+        ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+          
+        </div>
 
-
-        <motion.div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
-          animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}>
-             <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={gh2}
-                alt="GitHub Logo"
-                className={`w-25 h-25 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
-            </a>
-        </motion.div>
+        
 
         <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
