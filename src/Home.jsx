@@ -46,21 +46,26 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid sm:grid-cols-6 sm:grid-rows-14 lg:grid-cols-6 lg:grid-rows-7 sm:gap-3 lg:gap-3 max-w-[1200px] max-h-[1190px] p-5 mx-auto mt-10`}>
+      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 lg:gap-2 grid-cols-6 sm:grid-cols-12 lg:grid-cols-6 auto-rows-min 
+        p-4 sm:p-6 lg:p-1 rounded-2xl mt-20 sm:mt-10 lg:mt-20`}>
         <motion.div 
-        className={`sm:row-span-4 sm:col-span-4 lg:row-span-2 lg:col-span-3 rounded-4xl p-5 relative ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+        className={`rounded-4xl relative col-span-4 lg:col-span-3 row-span-1 sm:row-span-3 lg:row-span-2
+           p-4 sm:p-5 lg:p-6
+          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
         >
           {/* Toggle Button */}
           <motion.button
             onClick={handleToggle}
-            className={`absolute w-43 lg:mx-90 sm:mx-80 flex items-center gap-2 border border-gray-300 rounded-full px-2 py-1 cursor-pointer hover:border-gray-400 transition-all duration-200`}
+            className={`absolute top-4 right-4 flex items-center gap-2 cursor-pointer border border-gray-300 rounded-full px-3 py-1.5 sm:px-4 sm:py-1
+              cursor-pointer hover:border-gray-400 transition-all duration-200 text-sm sm:text-sm`}
+              
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
               src={toggleIcon}
-              className={`sm:w-5 lg:w-4 ${theme === 'dark' ? 'filter invert' : ''}`}
+              className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ${theme === 'dark' ? 'filter invert' : ''}`}
               animate={{ rotate: toggle ? 360 : 0 }}
               shadow={`bg-indigo-300`}
               transition={{ duration: 0.5 }}
@@ -97,7 +102,8 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`lg:row-span-2 lg:col-span-1 sm:col-span-2 sm:row-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <div className={`rounded-4xl col-span-2 sm:col-span-2 sm:row-span-1 lg:col-span-1 lg:row-span-2
+          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
           
         </div>
 
@@ -108,7 +114,8 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`lg:row-span-3 lg:col-span-2 sm:row-span-5 sm:col-span-2 rounded-4xl p-5 flex items-end justify-end relative overflow-hidden
+              className={`rounded-4xl flex items-end justify-end relative p-5 overflow-hidden
+                lg:row-span-3 lg:col-span-2 sm:row-span-3 sm:col-span-2 row-span-2 col-span-3
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -258,7 +265,8 @@ const Home = () => {
 
 
 
-        <motion.div className={`relative flex justify-center row-span-3 col-span-2 rounded-4xl p-5 
+        <motion.div className={`relative flex justify-center rounded-4xl p-5
+        lg:row-span-3 lg:col-span-2 row-span-2 col-span-3 sm:row-span-3 sm:col-span-2
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -273,7 +281,9 @@ const Home = () => {
         </motion.div>
           
         
-        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-2 lg:row-span-1 lg:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
+        row-span-1 col-span-2 p-5
+        flex justify-center items-center rounded-4xl  ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
@@ -284,7 +294,8 @@ const Home = () => {
             </a>
         </motion.div>
 
-        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-2 lg:row-span-1 lg:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
+        row-span-1 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
              <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
@@ -300,13 +311,13 @@ const Home = () => {
         {/*   HOW IT STARTED AND HOW IT'S GOING.. */}
         <AnimatePresence>
           {!showDetail && (
-            <motion.div className={`row-span-2 col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+            <motion.div className={`lg:row-span-2 lg:col-span-3 row-span-2 col-span-6 sm:row-span-2 sm:col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
             animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
               <div className="flex justify-center">
                   <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
                 </div>
-                <div className={`flex justify-center w-130`}>
-                  <p className={`text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
+                <div className={`flex justify-center lg:w-130 w-100`}>
+                  <p className={`lg:text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
                   I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
                   My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
                   </p>
@@ -357,7 +368,8 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail2 && (
             <motion.div
-            className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 
+            className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
+              row-span-2 col-span-2 rounded-4xl p-5 
             ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
             
             >
@@ -398,7 +410,8 @@ const Home = () => {
 
         
 
-        <div className={`flex justify-center items-center row-span-1 col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        <div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
+        row-span-2 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
               className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } w-15 h-15 rounded-full shadow-md`}
@@ -409,7 +422,7 @@ const Home = () => {
             </div>
         </div>
 
-        <motion.div className={`relative overflow-hidden row-span-2 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+        <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3 lg:row-span-2 lg:col-span-3 row-span-3 col-span-3 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
@@ -424,7 +437,7 @@ const Home = () => {
           
         </motion.div>
 
-        <motion.div className={`row-span-2 col-span-3 text-xl rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
+        <motion.div className={`lg:row-span-2 lg:col-span-3 sm:row-span-2 lg:col-span-3 col-span-3 row-span-3 text-lg rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
           : 'bg-white text-gray-700 shadow-lg'}`}
           animate={{opacity: isActive('') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{duration: 0.3, ease: 'easeInOut' }}>
