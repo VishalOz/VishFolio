@@ -5,7 +5,7 @@ import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import gh from './assets/gh.png';
-import gh2 from './assets/gh2.png';
+import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
 import In from './assets/in.png.webp'
 import Projects from './Projects';
@@ -135,7 +135,7 @@ const Home = () => {
               <div className="absolute bottom-3 right-3">
                 <button
                   onClick={() => setShowDetail1(true)}
-                  className={`${theme === 'dark'
+                  className={`cursor-pointer ${theme === 'dark'
                     ? 'bg-black text-white border border-gray-200'
                     : 'bg-white text-black border border-gray-200'} 
                     hover:border-gray-400 transition duration-300 px-3 py-1 rounded-full text-sm`}
@@ -179,8 +179,13 @@ const Home = () => {
                 <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
-                    <p className="text-sm opacity-80 mt-2">
-                      A simple traffic visualization project with CSV + Tkinter histograms.
+                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>Aug 2025</p>
+                    <p className="text-sm opacity-80 mt-2 w-150 items-center">
+                    A modern, fully responsive personal portfolio built with React, styled with Tailwind CSS, and improved using Framer Motion animations.  
+                    It showcases projects, personal journey, and design work in a dynamic grid layout.  
+                    The site features a dark/light theme toggle, smooth image transitions, and interactive modals for detailed project previews.  
+                    It includes external links to GitHub, LinkedIn, and email subscription using mailto:.  
+                    The design focuses on a balance between clean UI and functional interactivity.
                     </p>
                   </div>
                   <div className="flex gap-4 mt-4">
@@ -188,9 +193,9 @@ const Home = () => {
                       className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
-                    >  Live </button>
+                    > <a href="https://vish-folio.vercel.app">Live</a>  </button>
                     <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all">GitHub</button>
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/VishFolio">GitHub</a></button>
                       </div>
                   </div>
                 </div>
@@ -207,9 +212,14 @@ const Home = () => {
                 
                 <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
-                    <span className="text-xl font-semibold tracking-relaxed">Reliv</span>
+                    <span className="text-xl font-semibold tracking-relaxed">LifeOnLand</span>
+                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
                     <p className="text-sm opacity-80 mt-2">
-                      A simple traffic visualization project with CSV + Tkinter histograms.
+                    A responsive carousel system showcases volunteer events with smooth transitions and thumbnail navigation.
+                    It is built using vanilla JavaScript, ensuring lightweight performance with no external libraries. The system includes next and previous navigation,
+                    auto-slide functionality, and animated transitions for a polished user experience. Thumbnail previews sync with the main carousel for quick navigation.
+                    It is optimized for event promotion, featuring descriptive content blocks, images, and a call-to-action JOIN button. The design allows for easy customization
+                    for various event types or campaigns.
                     </p>
                   </div>
                   <div className="flex gap-4 mt-4">
@@ -217,9 +227,9 @@ const Home = () => {
                       className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
-                    >  Live </button>
-                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all">GitHub</button>
+                    >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
+                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
                       </div>
                   </div>
                 </div>
@@ -243,7 +253,7 @@ const Home = () => {
                   </div>
                   <div className="flex gap-4 mt-4">
                     <button
-                      className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
+                      className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
                     >  Live </button>
@@ -274,7 +284,7 @@ const Home = () => {
           <div className={`${theme ==='dark' ? 'bg-white border border-white opacity-70' : "bg-rose-600"} absolute top-1/2 right-1/2 w-60 h-60 rounded-full opacity-40`}></div>
           <Median />
           <div className={`absolute bottom-3 right-3`}>
-            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} cursor-pointer hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
               Read more
             </button>
           </div>
@@ -290,7 +300,7 @@ const Home = () => {
               <img 
                 src={In}
                 alt="LinkedIn"
-                className={`lg:w-40 lg:h-36 sm:h-25 cursor-pointer`} />
+                className={`lg:w-60 lg:h-36 w-55 h-20 object-contain cursor-pointer rounded-2xl cursor-pointer`} />
             </a>
         </motion.div>
 
@@ -300,9 +310,9 @@ const Home = () => {
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
              <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
               <img
-                src={gh2}
+                src={gh3}
                 alt="GitHub Logo"
-                className={`lg:w-25 lg:h-25 sm:w-17 sm:h-17 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
+                className={`lg:w-40 lg:h-35 sm:w-17 sm:h-17 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
             </a>
         </motion.div>
 
@@ -316,7 +326,7 @@ const Home = () => {
               <div className="flex justify-center">
                   <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
                 </div>
-                <div className={`flex justify-center lg:w-130 w-100`}>
+                <div className={`flex justify-center lg:w-130 w-60`}>
                   <p className={`lg:text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
                   I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
                   My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
@@ -328,7 +338,7 @@ const Home = () => {
                 <div>
                   <button 
                   onClick={() => setShowDetail(true)}
-                  className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+                  className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
                     Read more
                   </button>
                 </div>
@@ -346,7 +356,7 @@ const Home = () => {
                 <div className={`flex justify-center items-center mb-25`}>
                   <button 
                     onClick={() => setShowDetail(false)}
-                    className={`
+                    className={`cursor-pointer
                       ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-gray-100 text-black`} text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center ml-4`}
                   >
                   ✕
@@ -375,7 +385,7 @@ const Home = () => {
             >
               <button 
                   onClick={() => setShowDetail2(true)}
-                  className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
+                  className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
                     Ai Bota
                   </button>
             </motion.div>
@@ -392,7 +402,7 @@ const Home = () => {
               <div className={`flex justify-center items-center mb-25`}>
                 <button 
                   onClick={() => setShowDetail2(false)}
-                  className={`
+                  className={`cursor-pointer
                     ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-gray-100 text-black`} text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center ml-4`}
                 >
                 ✕
@@ -412,9 +422,9 @@ const Home = () => {
 
         <div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
         row-span-2 col-span-2 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
-          <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  lg:w-25 lg:h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } w-15 h-15 rounded-full shadow-md`}
+              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-15 lg:h-15 w-10 h-10 rounded-full shadow-md`}
               layout
               animate={{ x: theme === "light" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -430,14 +440,14 @@ const Home = () => {
             <Sm />
           </div>
           <div className={`absolute bottom-3 right-3`}>
-            <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-29 px-3 py-1 rounded-full text-sm`}>
+            <button className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-29 px-3 py-1 rounded-full text-sm`}>
               Visit Designs
             </button>
           </div>
           
         </motion.div>
 
-        <motion.div className={`lg:row-span-2 lg:col-span-3 sm:row-span-2 lg:col-span-3 col-span-3 row-span-3 text-lg rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
+        <motion.div className={`lg:row-span-2 lg:col-span-3 sm:row-span-2 lg:col-span-3 col-span-3 row-span-2 text-lg rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
           : 'bg-white text-gray-700 shadow-lg'}`}
           animate={{opacity: isActive('') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -478,7 +488,7 @@ const Home = () => {
               const body = `User message: ${userInput}`;
               window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
-            className={`${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 rounded-full w-25 h-7 flex items-center justify-center
+            className={`cursor-pointer ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 rounded-full w-25 h-7 flex items-center justify-center
             `}>Submit</button>
             </div>
         </motion.div>
