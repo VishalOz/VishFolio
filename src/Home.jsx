@@ -10,6 +10,7 @@ import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
 import lgif from './assets/lgif.gif'
 import In from './assets/in.png.webp'
+import lik from  './assets/lik.png'
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -106,8 +107,12 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 md:col-span-5 lg:col-span-1 lg:row-span-2 p-5
-          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
+        <motion.div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 md:col-span-5 lg:col-span-1 lg:row-span-2 p-5
+          ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+          onActive={() => setSelected('Media')}
+          animate={{ opacity: isActive('Media') ? 1 : 0.3, scale: isActive('') ? 1 : 0.97 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
             <div className="flex items-center mb-35">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -126,10 +131,10 @@ const Home = () => {
 
             {/* Track Info */}
             <div className="mt-1">
-              <span className={`font-bold text-lg ${theme === 'dark' ? 'text-white' : ''}`}>I Don’t Belong</span>
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Fontaines D.C.</p>
+              <span className={`text-lg ${theme === 'dark' ? 'text-white' : ''}`}>Lost cause</span>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Billie Eilish</p>
             </div>
-        </div>
+        </motion.div>
 
 
 
@@ -190,21 +195,23 @@ const Home = () => {
               </div>
               {/* Project Details */}
               <div className="space-y-4 mt-25">
-                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+
+
+
+              <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-span-1 flex justify-center items-center">
+                  <div className="row-span-1 flex justify-center items-center">
                     <img
                       src={cw1}
                       alt="PROJECT1"
                       className="w-100 h-70 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
-                
-                <div className="col-span-1 flex flex-col justify-between pl-4 sm:w-50">
+                <div className="row-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
-                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>Aug 2025</p>
-                    <p className="text-sm opacity-80 mt-2 w-150 items-center">
+                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>August 2025</p>
+                    <p className="text-[13px] opacity-80 mt-2">
                     A modern, fully responsive personal portfolio built with React, styled with Tailwind CSS, and improved using Framer Motion animations.  
                     It showcases projects, personal journey, and design work in a dynamic grid layout.  
                     The site features a dark/light theme toggle, smooth image transitions, and interactive modals for detailed project previews.  
@@ -217,28 +224,29 @@ const Home = () => {
                       className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
-                    > <a href="https://vish-folio.vercel.app">Live</a>  </button>
-                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/VishFolio">GitHub</a></button>
+                    >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
+                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
                       </div>
                   </div>
                 </div>
 
-                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+
+
+                <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-span-1 flex justify-center items-center">
+                  <div className="row-span-1 flex justify-center items-center">
                     <img
                       src={cw1}
                       alt="PROJECT1"
-                      className="w-90 h-70 object-cover rounded-2xl shadow-lg"
+                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
-                
-                <div className="col-span-1 flex flex-col justify-between pl-4">
+                <div className="row-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">LifeOnLand</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
-                    <p className="text-sm opacity-80 mt-2">
+                    <p className="text-[13px] opacity-80 mt-2">
                     A responsive carousel system showcases volunteer events with smooth transitions and thumbnail navigation.
                     It is built using vanilla JavaScript, ensuring lightweight performance with no external libraries. The system includes next and previous navigation,
                     auto-slide functionality, and animated transitions for a polished user experience. Thumbnail previews sync with the main carousel for quick navigation.
@@ -258,19 +266,21 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+
+
+                <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-span-1 flex justify-center items-center">
+                  <div className="col-row-1 flex justify-center items-center">
                     <img
                       src={cw1}
                       alt="PROJECT1"
-                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
+                      className="w-100 h-70 object-cover rounded-2xl shadow-lg mb-12"
                     />
                   </div>
-                
-                <div className="col-span-1 flex flex-col justify-between pl-4">
+                <div className="row-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">Traffic Data Program</span>
+                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>September 2024</p>
                     <p className="text-sm opacity-80 mt-2">
                       A simple traffic visualization project with CSV + Tkinter histograms.
                     </p>
@@ -312,14 +322,11 @@ const Home = () => {
         
         <motion.div className={`sm:col-span-1 sm:row-span-1 lg:col-span-1 
         row-span-1 col-span-6 p-5
-        flex justify-center items-center rounded-4xl  ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        flex justify-center items-center rounded-4xl  ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
-              <img 
-                src={In}
-                alt="LinkedIn"
-                className={`lg:w-60 lg:h-36 w-60 h-20 object-contain cursor-pointer rounded-2xl cursor-pointer`} />
+              <h3 className={`font-bold text-[60px] ${theme === 'dark' ? 'text-sky-300' : 'text-white'}`}>in</h3>
             </a>
         </motion.div>
 
