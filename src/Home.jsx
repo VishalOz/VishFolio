@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Activity } from "lucide-react";
 import Nav from './Nav';
 import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
@@ -24,6 +25,7 @@ const Home = () => {
   const [showDetail, setShowDetail] = useState(false);
   const [showDetail1, setShowDetail1] = useState(false);
   const [showDetail2, setShowDetail2] = useState(false);
+  const [showDetail3, setShowDetail3] = useState(false);
 
   const[userInput, setUserInput] = useState("");
 
@@ -47,11 +49,11 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 lg:gap-2 sm:grid-cols-12 lg:grid-cols-6 grid-cols-12 
+      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 md:gap-2 lg:gap-2 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-6 grid-cols-12 
         auto-rows-min p-4 sm:p-6 lg:p-1 rounded-2xl mt-20 sm:mt-10 lg:mt-20`}>
         
         <motion.div 
-        className={`rounded-4xl relative col-span-12 lg:col-span-3  sm:row-span-3 lg:row-span-2
+        className={`rounded-4xl relative col-span-12 lg:col-span-3  sm:row-span-3 md:col-span-7 lg:row-span-2
            p-4 sm:p-5 lg:p-6
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
@@ -104,9 +106,29 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 lg:col-span-1 lg:row-span-2 p-5
+        <div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 md:col-span-5 lg:col-span-1 lg:row-span-2 p-5
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
-            <p>This is just for training</p>
+            <div className="flex items-center mb-35">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="w-15 h-15 text-green-500"
+              >
+                <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.498 17.453a.746.746 0 0 1-1.023.246c-2.8-1.71-6.34-2.1-10.488-1.156a.75.75 0 0 1-.327-1.465c4.56-1.02 8.52-.572 11.664 1.27.353.215.465.675.174 1.105zm1.437-3.18a.934.934 0 0 1-1.283.306c-3.207-1.976-8.09-2.55-11.876-1.402a.933.933 0 0 1-.55-1.783c4.29-1.323 9.635-.675 13.337 1.625a.933.933 0 0 1 .372 1.254zm.123-3.333C15.75 8.488 8.25 8.25 4.762 9.32a1.118 1.118 0 1 1-.658-2.14c4.016-1.234 12.25-1.008 16.393 1.676a1.118 1.118 0 0 1-1.14 1.943z" />
+              </svg>
+            </div>
+
+            {/* Status */}
+            <p className={`flex items-center gap-1 text-green-500 text-sm mt-2`}>
+              <Activity size={14} className={`animate-pulse`} /> Offline. Last played
+            </p>
+
+            {/* Track Info */}
+            <div className="mt-1">
+              <span className={`font-bold text-lg ${theme === 'dark' ? 'text-white' : ''}`}>I Don’t Belong</span>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Fontaines D.C.</p>
+            </div>
         </div>
 
 
@@ -117,7 +139,7 @@ const Home = () => {
           {!showDetail1 && (
             <motion.div
               className={`rounded-4xl flex items-end justify-end relative p-10 overflow-hidden
-                lg:col-span-2 sm:row-span-3 sm:col-span-2 col-span-12 
+                lg:col-span-2 sm:row-span-3 sm:col-span-2 md:col-span-5  col-span-12 
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -264,11 +286,6 @@ const Home = () => {
                       </div>
                   </div>
                 </div>
-
-                
-                
-                  
-                
               </div>
             </motion.div>
           )}
@@ -434,20 +451,50 @@ const Home = () => {
             </div>
         </div>
 
-        <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3  lg:col-span-3  col-span-12 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
-        animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
-          <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
-          <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
-          <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-            <Sm />
-          </div>
-          <div className={`absolute bottom-3 right-3`}>
-            <button className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-29 px-3 py-1 rounded-full text-sm`}>
-              Visit Designs
-            </button>
-          </div>
-          
-        </motion.div>
+        
+        <AnimatePresence>
+          {!showDetail3 && (
+            <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3  lg:col-span-3  col-span-12 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+            animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
+              <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
+              <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
+              <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+                <Sm />
+              </div>
+              <div className={`absolute bottom-3 right-3`}>
+                <button 
+                onClick ={() => setShowDetail3(true)}
+                className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-29 px-3 py-1 rounded-full text-sm`}>
+                  Visit Designs
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {showDetail3 && (
+            <motion.div
+            className={`fixed inset-0 z-50 p-10 overflow-auto flex flex-col 
+            ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-100 text-black'}`}
+            key="project-details"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Close Button */}
+            <div className="flex justify-center mb-6">
+              <button
+                onClick={() => setShowDetail3(false)}
+                className={`${theme === 'dark' ? 'bg-gray-200 text-black': 'bg-white text-black'} 
+                  text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center`} >
+                ✕
+              </button>
+            </div>
+            </motion.div>
+          ) }
+        </AnimatePresence>
+        
 
         <motion.div className={`lg:row-span-2 lg:col-span-3 sm:row-span-2 lg:col-span-3 col-span-12 row-span-2 text-lg rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
           : 'bg-white text-gray-700 shadow-lg'}`}
