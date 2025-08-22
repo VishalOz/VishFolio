@@ -7,6 +7,7 @@ import toggleIcon from './assets/toggle.png';
 import gh from './assets/gh.png';
 import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
+import lgif from './assets/lgif.gif'
 import In from './assets/in.png.webp'
 import Projects from './Projects';
 import Median from './Median';
@@ -46,10 +47,11 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 lg:gap-2 grid-cols-6 sm:grid-cols-12 lg:grid-cols-6 auto-rows-min 
-        p-4 sm:p-6 lg:p-1 rounded-2xl mt-20 sm:mt-10 lg:mt-20`}>
+      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 lg:gap-2 sm:grid-cols-12 lg:grid-cols-6 grid-cols-12 
+        auto-rows-min p-4 sm:p-6 lg:p-1 rounded-2xl mt-20 sm:mt-10 lg:mt-20`}>
+        
         <motion.div 
-        className={`rounded-4xl relative col-span-4 lg:col-span-3 row-span-1 sm:row-span-3 lg:row-span-2
+        className={`rounded-4xl relative col-span-12 lg:col-span-3 row-span-1 sm:row-span-3 lg:row-span-2
            p-4 sm:p-5 lg:p-6
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
@@ -94,7 +96,7 @@ const Home = () => {
           {/* Description */}
           <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
-            I'm passionate about <span className="text-indigo-600 text-xl">React, Java, .NET</span>.  
+            I'm passionate about <span className="text-indigo-600 text-xl">React, Java, C#</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
           </p>
 
@@ -102,7 +104,7 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <div className={`rounded-4xl col-span-2 sm:col-span-2 sm:row-span-1 lg:col-span-1 lg:row-span-2
+        <div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 lg:col-span-1 lg:row-span-2
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}>
           
         </div>
@@ -115,7 +117,7 @@ const Home = () => {
           {!showDetail1 && (
             <motion.div
               className={`rounded-4xl flex items-end justify-end relative p-5 overflow-hidden
-                lg:row-span-3 lg:col-span-2 sm:row-span-3 sm:col-span-2 row-span-2 col-span-3
+                lg:row-span-3 lg:col-span-2 sm:row-span-3 sm:col-span-2 col-span-12
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -176,7 +178,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-1 flex flex-col justify-between pl-4">
+                <div className="col-span-12 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>Aug 2025</p>
@@ -210,7 +212,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-1 flex flex-col justify-between pl-4">
+                <div className="col-span-12 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">LifeOnLand</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
@@ -244,7 +246,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-1 flex flex-col justify-between pl-4">
+                <div className="col-span-12 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">Traffic Data Program</span>
                     <p className="text-sm opacity-80 mt-2">
@@ -383,11 +385,11 @@ const Home = () => {
             ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
             
             >
-              <button 
+              <img src={lgif} 
                   onClick={() => setShowDetail2(true)}
-                  className={`cursor-pointer ${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
-                    Ai Bota
-                  </button>
+                  className={`cursor-pointer ${theme === "dark" ? "filter invert " : ""} transition duration-300 w-40 h-40 rounded-full`}>
+                    
+                  </img>
             </motion.div>
           )}
           {showDetail2 && (
@@ -411,8 +413,8 @@ const Home = () => {
               <span className="flex justify-center items-center text-2xl font-bold mb-6">Bad Timing</span>
             </div>
 
-            <p className="leading-relaxed text-md px-10 ">
-             Ai Feature wil be launch soon.
+            <p className="flex leading-relaxed text-md px-10 justify-center">
+             Ai Feature wil launch soon.
             </p>
           </motion.div>
           )}
