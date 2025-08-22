@@ -1,13 +1,13 @@
 import React from 'react';
 import Folio from './assets/siri.gif'
-import Set from './assets/settings.gif'
+import Set from './assets/settings22.png'
 
 const Projects = () => {
   return (
     <div className="transform rotate-30">
       <div className={`flex flex-col justify-center items-center p-4 bg-purple-50 w-64 h-110 lg:w-64 lg:h-110 sm:w-55 sm:h-80 rounded-3xl shadow-xl
         `}>
-        <img src={Folio} alt="Project preview" className="w-20 h-20 object-cover mb-4 rounded-full shadow-md" />
+        <img src={Set} alt="Project preview" className="w-25 h-25 object-cover mb-4 rounded-full" />
         <h1 className="font-bold text-lg mb-2">View the Projects</h1>
         <p className="text-sm text-gray-600 text-center mb-4 px-2">
           These are some projects that I've been working on. Click the button to view them.
