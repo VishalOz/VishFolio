@@ -116,16 +116,16 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`rounded-4xl flex items-end justify-end relative p-5 overflow-hidden
+              className={`rounded-4xl flex items-end justify-end relative p-10 overflow-hidden
                 lg:col-span-2 sm:row-span-3 sm:col-span-2 col-span-12 
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               {/* Background Circles */}
-              <div className={`${theme === 'dark' ? 'bg-white opacity-20' : 'bg-pink-600 opacity-50'}
+              <div className={`${theme === 'dark' ? 'bg-white opacity-70' : 'bg-pink-600 opacity-50'}
                 absolute top-10 right-1/2 w-72 h-72 rounded-full`}></div>
-              <div className={`${theme === 'dark' ? 'bg-white opacity-20' : 'bg-pink-600 opacity-50'} 
+              <div className={`${theme === 'dark' ? 'bg-white opacity-70' : 'bg-pink-600 opacity-50'} 
                 absolute top-1/3 left-1/2 w-64 h-64 rounded-full`}></div>
 
               {/* Project Component */}
@@ -178,7 +178,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-12 flex flex-col justify-between pl-4">
+                <div className="col-span-1 flex flex-col justify-between pl-4 sm:w-50">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>Aug 2025</p>
@@ -212,7 +212,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-12 flex flex-col justify-between pl-4">
+                <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">LifeOnLand</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
@@ -246,7 +246,7 @@ const Home = () => {
                     />
                   </div>
                 
-                <div className="col-span-12 flex flex-col justify-between pl-4">
+                <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">Traffic Data Program</span>
                     <p className="text-sm opacity-80 mt-2">
@@ -380,14 +380,14 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail2 && (
             <motion.div
-            className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
-              col-span-6 rounded-4xl p-5 
+            className={`flex justify-center items-center sm:col-span-1  sm:row-span-1 lg:row-span-1 lg:col-span-1 
+              col-span-6 row-span-1 rounded-4xl p-5 
             ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
             
             >
               <img src={lgif} 
                   onClick={() => setShowDetail2(true)}
-                  className={`cursor-pointer ${theme === "dark" ? "filter invert " : ""} transition duration-300 w-40 h-40 rounded-full`}>
+                  className={`cursor-pointer ${theme === "dark" ? "filter invert " : ""} transition duration-300 w-30 h-30 rounded-full`}>
                     
                   </img>
             </motion.div>
@@ -423,10 +423,10 @@ const Home = () => {
         
 
         <div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
-        row-span-2 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        row-span-1 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 lg:w-25 lg:h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-12 lg:h-12 w-12 h-12 rounded-full shadow-md`}
+              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-15 lg:h-15 w-12 h-12 rounded-full shadow-md`}
               layout
               animate={{ x: theme === "light" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -434,7 +434,7 @@ const Home = () => {
             </div>
         </div>
 
-        <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3 lg:row-span-2 lg:col-span-3  col-span-12 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+        <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3  lg:col-span-3  col-span-12 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
           <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
