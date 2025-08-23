@@ -5,8 +5,10 @@ import Nav from './Nav';
 import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
+import gh from './assets/gh.png';
 import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
+
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -46,10 +48,10 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[300px] p-20`}>
+      <div className={`grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[300px] p-30`}>
         
         <motion.div 
-        className={`relative col-span-1 sm:col-span-2 lg:col-span-2 rounded-4xl
+        className={`relative col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 rounded-4xl
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -101,7 +103,7 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <motion.div className={`rounded-4xl col-span-1 sm:col-span-2 lg:col-span-1 p-5
+        <motion.div className={`rounded-4xl col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 p-5
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           onActive={() => setSelected('Media')}
           animate={{ opacity: isActive('Media') ? 1 : 0.3, scale: isActive('') ? 1 : 0.97 }}
@@ -137,7 +139,7 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 lg:col-span-1 overflow-hidden
+              className={`rounded-4xl relative row-span-2 col-span-1 sm:col-span-2  md:col-span-2 lg:col-span-1 overflow-hidden
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -298,7 +300,7 @@ const Home = () => {
 
 
         <motion.div className={`relative flex justify-center p-5
-        rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 lg:col-span-1 overflow-hidden
+        rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-1 overflow-hidden
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -313,7 +315,7 @@ const Home = () => {
         </motion.div>
           
         
-        <motion.div className={`sm:col-span-1 sm:row-span-1 lg:col-span-1 
+        <motion.div className={`sm:col-span-1 md:col-span-1 sm:row-span-1 md:row-span-1 lg:col-span-1 
         row-span-1 col-span-6 p-5
         flex justify-center items-center rounded-4xl  ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
@@ -331,7 +333,7 @@ const Home = () => {
               <img
                 src={gh3}
                 alt="GitHub Logo"
-                className={`lg:w-40 lg:h-35 sm:w-17 sm:h-17 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
+                className={`lg:w-30 lg:h-30 sm:w-17 sm:h-17 cursor-pointer ${theme === 'dark' ? 'filter invert' : ''}`} />
             </a>
         </motion.div>
 
@@ -346,7 +348,7 @@ const Home = () => {
               <div className="flex justify-center">
                   <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
                 </div>
-                <div className={`flex justify-center lg:w-130 w-60`}>
+                <div className={`flex justify-center lg:w-130 sm:w-110`}>
                   <p className={`lg:text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
                   I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
                   My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
@@ -398,7 +400,7 @@ const Home = () => {
         row-span-1 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 lg:w-25 lg:h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
-              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-15 lg:h-15 w-12 h-12 rounded-full shadow-md`}
+              className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-10 lg:h-10 w-12 h-12 rounded-full shadow-md`}
               layout
               animate={{ x: theme === "light" ? -20 : 20 }}  
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -459,7 +461,7 @@ const Home = () => {
           transition={{duration: 0.3, ease: 'easeInOut' }}>
             {/* Title */}
             <div className="flex justify-center mb-6">
-              <span className="font-semibold tracking-wide">
+              <span className="font-semibold tracking-wide text-xl">
                 Shall I keep you in the Loop?
               </span>
             </div>
