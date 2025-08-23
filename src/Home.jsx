@@ -5,12 +5,8 @@ import Nav from './Nav';
 import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
-import gh from './assets/gh.png';
 import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
-import lgif from './assets/lgif.gif'
-import In from './assets/in.png.webp'
-import lik from  './assets/lik.png'
 import Projects from './Projects';
 import Median from './Median';
 import Sm from './Sm';
@@ -50,12 +46,10 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`w-full max-w-6xl mx-auto grid gap-2 sm:gap-2 md:gap-2 lg:gap-2 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-6 grid-cols-12 
-        auto-rows-min p-4 sm:p-6 lg:p-1 rounded-2xl mt-20 sm:mt-10 lg:mt-20`}>
+      <div className={`grid gap-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[300px] p-20`}>
         
         <motion.div 
-        className={`rounded-4xl relative col-span-12 lg:col-span-3  sm:row-span-3 md:col-span-7 lg:row-span-2
-           p-4 sm:p-5 lg:p-6
+        className={`relative col-span-1 sm:col-span-2 lg:col-span-2 rounded-4xl
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -97,7 +91,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className={`text-md leading-relaxed text-gray-700 mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <p className={`text-md leading-relaxed text-gray-700 mb-4 px-10 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, C#</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -107,7 +101,7 @@ const Home = () => {
 
 
         {/* Empty Grid Boxes */}
-        <motion.div className={`rounded-4xl col-span-12 sm:col-span-12 sm:row-span-1 md:col-span-5 lg:col-span-1 lg:row-span-2 p-5
+        <motion.div className={`rounded-4xl col-span-1 sm:col-span-2 lg:col-span-1 p-5
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           onActive={() => setSelected('Media')}
           animate={{ opacity: isActive('Media') ? 1 : 0.3, scale: isActive('') ? 1 : 0.97 }}
@@ -143,8 +137,7 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`rounded-4xl flex items-end justify-end relative p-10 overflow-hidden
-                lg:col-span-2 sm:row-span-3 sm:col-span-2 md:col-span-5  col-span-12 
+              className={`rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 lg:col-span-1 overflow-hidden
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -304,8 +297,8 @@ const Home = () => {
 
 
 
-        <motion.div className={`relative flex justify-center rounded-4xl p-5
-        lg:col-span-2 col-span-12 sm:row-span-3 sm:col-span-2
+        <motion.div className={`relative flex justify-center p-5
+        rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 lg:col-span-1 overflow-hidden
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -347,7 +340,8 @@ const Home = () => {
         {/*   HOW IT STARTED AND HOW IT'S GOING.. */}
         <AnimatePresence>
           {!showDetail && (
-            <motion.div className={`lg:col-span-3 col-span-12 sm:row-span-2 sm:col-span-3 rounded-4xl p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
+            <motion.div className={`sm:col-span-1 lg:col-span-2 rounded-4xl
+              row-span-1 col-span-6 p-10 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
             animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
               <div className="flex justify-center">
                   <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
@@ -399,52 +393,6 @@ const Home = () => {
             </motion.div>
           )}
         </AnimatePresence>
-          
-
-        <AnimatePresence>
-          {!showDetail2 && (
-            <motion.div
-            className={`flex justify-center items-center sm:col-span-1  sm:row-span-1 lg:row-span-1 lg:col-span-1 
-              col-span-6 row-span-1 rounded-4xl p-5 
-            ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
-            
-            >
-              <img src={lgif} 
-                  onClick={() => setShowDetail2(true)}
-                  className={`cursor-pointer ${theme === "dark" ? "filter invert " : ""} transition duration-300 w-30 h-30 rounded-full`}>
-                    
-                  </img>
-            </motion.div>
-          )}
-          {showDetail2 && (
-            <motion.div className={`fixed inset-0 z-50 p-10 overflow-auto ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-black'}`}
-            key="details"
-            initial={{opacity: 0, y: 50}}
-            animate={{opacity: 1, y: 0}}
-            exit={{opacity: 0, y: 100}}
-            transition={{duration: 0.3}}
-          >
-            <div className={`p-5`}>
-              <div className={`flex justify-center items-center mb-25`}>
-                <button 
-                  onClick={() => setShowDetail2(false)}
-                  className={`cursor-pointer
-                    ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-gray-100 text-black`} text-xl font-bold hover:opacity-70 rounded-full w-11 h-11 flex items-center justify-center ml-4`}
-                >
-                ✕
-                </button>
-              </div>
-              <span className="flex justify-center items-center text-2xl font-bold mb-6">Bad Timing</span>
-            </div>
-
-            <p className="flex leading-relaxed text-md px-10 justify-center">
-             Ai Feature wil launch soon.
-            </p>
-          </motion.div>
-          )}
-        </AnimatePresence>
-
-        
 
         <div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
         row-span-1 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
@@ -461,7 +409,8 @@ const Home = () => {
         
         <AnimatePresence>
           {!showDetail3 && (
-            <motion.div className={`relative overflow-hidden sm:row-span-2 sm:col-span-3  lg:col-span-3  col-span-12 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+            <motion.div className={`relative overflow-hidden sm:col-span-1 lg:col-span-2 rounded-4xl
+              row-span-1 col-span-6 p-10 p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
             animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
@@ -503,7 +452,8 @@ const Home = () => {
         </AnimatePresence>
         
 
-        <motion.div className={`lg:row-span-2 lg:col-span-3 sm:row-span-2 lg:col-span-3 col-span-12 row-span-2 text-lg rounded-4xl p-8 transition-all duration-300 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
+        <motion.div className={`sm:col-span-1 lg:col-span-2 rounded-4xl
+              row-span-1 col-span-6 p-10 ${theme === 'dark' ? 'bg-black border border-gray-300 text-white'
           : 'bg-white text-gray-700 shadow-lg'}`}
           animate={{opacity: isActive('') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -544,7 +494,7 @@ const Home = () => {
               const body = `User message: ${userInput}`;
               window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
-            className={`cursor-pointer ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 rounded-full w-25 h-7 flex items-center justify-center
+            className={`cursor-pointer ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 hover:border-gray-600 rounded-full w-25 h-7 flex items-center justify-center
             `}>Submit</button>
             </div>
         </motion.div>
