@@ -5,6 +5,8 @@ import Nav from './Nav';
 import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
+import portfolio from  './assets/portfolio.png'
+import lifeonland from './assets/lifeonland.png'
 import gh from './assets/gh.png';
 import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
@@ -48,10 +50,10 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[300px] p-30`}>
+      <div className={`grid gap-2 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 auto-rows-[300px] p-30`}>
         
         <motion.div 
-        className={`relative col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2 rounded-4xl
+        className={`relative col-span-3 sm:col-span-3 md:col-span-2 lg:col-span-2 rounded-4xl
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -93,7 +95,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className={`text-md leading-relaxed text-gray-700 mb-4 px-10 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <p className={`lg:text-md leading-relaxed text-gray-700 mb-4 px-10 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, C#</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -193,25 +195,21 @@ const Home = () => {
 
 
 
-              <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+              <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
                   <div className="row-span-1 flex justify-center items-center">
                     <img
-                      src={cw1}
+                      src={portfolio}
                       alt="PROJECT1"
                       className="w-100 h-70 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
-                <div className="row-span-1 flex flex-col justify-between pl-4">
+                <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>August 2025</p>
                     <p className="text-[13px] opacity-80 mt-2">
-                    A modern, fully responsive personal portfolio built with React, styled with Tailwind CSS, and improved using Framer Motion animations.  
-                    It showcases projects, personal journey, and design work in a dynamic grid layout.  
-                    The site features a dark/light theme toggle, smooth image transitions, and interactive modals for detailed project previews.  
-                    It includes external links to GitHub, LinkedIn, and email subscription using mailto:.  
-                    The design focuses on a balance between clean UI and functional interactivity.
+                    A modern, fully responsive personal Bento box style portfolio built with React, styled with Tailwind CSS, and improved using Framer Motion animations. 
                     </p>
                   </div>
                   <div className="flex gap-4 mt-4">
@@ -228,11 +226,11 @@ const Home = () => {
 
 
 
-                <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="row-span-1 flex justify-center items-center">
+                  <div className="col-span-1 flex justify-center items-center">
                     <img
-                      src={cw1}
+                      src={lifeonland}
                       alt="PROJECT1"
                       className="w-100 h-70 object-cover rounded-2xl shadow-lg"
                     />
@@ -243,10 +241,6 @@ const Home = () => {
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
                     <p className="text-[13px] opacity-80 mt-2">
                     A responsive carousel system showcases volunteer events with smooth transitions and thumbnail navigation.
-                    It is built using vanilla JavaScript, ensuring lightweight performance with no external libraries. The system includes next and previous navigation,
-                    auto-slide functionality, and animated transitions for a polished user experience. Thumbnail previews sync with the main carousel for quick navigation.
-                    It is optimized for event promotion, featuring descriptive content blocks, images, and a call-to-action JOIN button. The design allows for easy customization
-                    for various event types or campaigns.
                     </p>
                   </div>
                   <div className="flex gap-4 mt-4">
@@ -255,43 +249,11 @@ const Home = () => {
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
                     >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
-                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-transparent text-black
                       hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
                       </div>
                   </div>
-                </div>
-
-
-
-                <div className={`grid grid-rows-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
-                  : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-row-1 flex justify-center items-center">
-                    <img
-                      src={cw1}
-                      alt="PROJECT1"
-                      className="w-100 h-70 object-cover rounded-2xl shadow-lg mb-12"
-                    />
-                  </div>
-                <div className="row-span-1 flex flex-col justify-between pl-4">
-                  <div>
-                    <span className="text-xl font-semibold tracking-relaxed">Traffic Data Program</span>
-                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>September 2024</p>
-                    <p className="text-sm opacity-80 mt-2">
-                      A simple traffic visualization project with CSV + Tkinter histograms.
-                    </p>
-                  </div>
-                  <div className="flex gap-4 mt-4">
-                    <button
-                      className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
-                      bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
-                      hover:opacity-90 transition-all"
-                    >  Live </button>
-                    <button className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all">GitHub</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
+                </div></div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -349,7 +311,7 @@ const Home = () => {
                   <span className={`text-xl mb-7 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>How it started vs.how it's going</span>
                 </div>
                 <div className={`flex justify-center lg:w-130 sm:w-110`}>
-                  <p className={`lg:text-md leading-relaxed mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
+                  <p className={`lg:text-md sm-text-sm mb-3 ${theme === "dark" ? "text-white" : "text-gray-700"}`}>
                   I was never the “born IT geek” type. If I had to count all the computer games I've played in my life, I could do it on the fingers of my hands and still have fingers left over.
                   My real interests were in math and physics. I wasn't a prodigy, but I loved them the logic ...
                   </p>
