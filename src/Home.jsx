@@ -51,10 +51,10 @@ const Home = () => {
   return (
     <>
       <Nav selected={selected} setSelected={setSelected}/>
-      <div className={`grid gap-2 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 auto-rows-[300px] p-30`}>
+      <div className={`grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:auto-rows-[300px] p-4 sm:p-6 md:p-8 lg:p-30`}>
         
         <motion.div 
-        className={`relative col-span-3 sm:col-span-3 md:col-span-2 lg:col-span-2 rounded-4xl
+        className={`relative col-span-6 sm:col-span-2 md:col-span-2 lg:col-span-2 rounded-4xl
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           animate={{ opacity: isActive('About') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -96,7 +96,7 @@ const Home = () => {
           </AnimatePresence>
 
           {/* Description */}
-          <p className={`lg:text-md leading-relaxed text-gray-700 mb-4 px-10 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <p className={`text-sm sm:text-base leading-relaxed mb-4 px-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
             I am <span className="font-bold text-xl">Vishal</span>, a developer and designer from Sri Lanka.  
             I'm passionate about <span className="text-indigo-600 text-xl">React, Java, C#</span>.  
             Always curious, I strive to build experiences that are both functional and visually compelling.
@@ -105,8 +105,8 @@ const Home = () => {
         </motion.div>
 
 
-        {/* Empty Grid Boxes */}
-        <motion.div className={`rounded-4xl col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 p-5
+        {/* Spotify Grid Boxes */}
+        <motion.div className={`rounded-4xl col-span-6 p-5 sm:col-span-1 lg:col-span-1
           ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-white'}`}
           onActive={() => setSelected('Media')}
           animate={{ opacity: isActive('Media') ? 1 : 0.3, scale: isActive('') ? 1 : 0.97 }}
@@ -142,7 +142,7 @@ const Home = () => {
         <AnimatePresence>
           {!showDetail1 && (
             <motion.div
-              className={`rounded-4xl relative row-span-2 col-span-1 sm:col-span-2  md:col-span-2 lg:col-span-1 overflow-hidden
+              className={`rounded-4xl relative lg:row-span-2 col-span-6 row-span-60 sm:col-span-1 lg:col-span-1 overflow-hidden
               ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-emerald-300'}`}
               animate={{ opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -296,7 +296,7 @@ const Home = () => {
 
 
         <motion.div className={`relative flex justify-center p-5
-        rounded-4xl relative row-span-2 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-1 overflow-hidden
+        rounded-4xl relative lg:row-span-2 col-span-6 sm:col-span-1 md:col-span-1 lg:col-span-1 overflow-hidden
         ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-sky-300'} overflow-hidden`}
         animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}
         transition={{duration: 0.3, ease: 'easeInOut' }}>
@@ -311,9 +311,7 @@ const Home = () => {
         </motion.div>
           
         
-        <motion.div className={`sm:col-span-1 md:col-span-1 sm:row-span-1 md:row-span-1 lg:col-span-1 
-        row-span-1 col-span-6 p-5
-        flex justify-center items-center rounded-4xl  ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
+        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 lg:row-span-1 row-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
@@ -321,8 +319,7 @@ const Home = () => {
             </a>
         </motion.div>
 
-        <motion.div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
-        row-span-1 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
              <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
@@ -404,11 +401,12 @@ const Home = () => {
             </div>
         </div>
 
+
         
         <AnimatePresence>
           {!showDetail3 && (
             <motion.div className={`relative overflow-hidden sm:col-span-1 lg:col-span-2 rounded-4xl
-              row-span-1 col-span-6 p-10 p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
+              lg:row-span-1 row-span-60 col-span-6 p-10 p-5 ${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-yellow-200'}`}
             animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
