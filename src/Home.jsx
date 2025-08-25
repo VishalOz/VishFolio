@@ -6,7 +6,8 @@ import ogdo from './assets/ogdo-2.png';
 import ogdo2 from './assets/ogdo2-2.png';
 import toggleIcon from './assets/toggle.png';
 import portfolio from  './assets/portfolio.png'
-import lifeonland from './assets/lifeonland.png'
+import lifeonland from './assets/lifeinland.png'
+import histogram from './assets/histogram.png'
 import gh from './assets/gh.png';
 import gh3 from './assets/gh3.png';
 import cw1 from './assets/cw1.png';
@@ -201,7 +202,7 @@ const Home = () => {
                     <img
                       src={portfolio}
                       alt="PROJECT1"
-                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
+                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
                 <div className="col-span-1 flex flex-col justify-between pl-4">
@@ -231,8 +232,8 @@ const Home = () => {
                   <div className="col-span-1 flex justify-center items-center">
                     <img
                       src={lifeonland}
-                      alt="PROJECT1"
-                      className="w-100 h-70 object-cover rounded-2xl shadow-lg"
+                      alt="PROJECT2"
+                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
                     />
                   </div>
                 <div className="row-span-1 flex flex-col justify-between pl-4">
@@ -249,8 +250,41 @@ const Home = () => {
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
                     >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
-                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-transparent text-black
+                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
                       hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
+                      </div>
+                  </div>
+                </div>
+
+
+                <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+                  : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
+                  <div className="col-span-1 flex justify-center items-center">
+                    <img
+                      src={histogram}
+                      alt="PROJECT3"
+                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
+                    />
+                  </div>
+                <div className="row-span-1 flex flex-col justify-between pl-4">
+                  <div>
+                    <span className="text-xl font-semibold tracking-relaxed">Histogram</span>
+                    <p className={`flex justify-start text-gray-500 font-bold test-sm`}>September 2024</p>
+                    <p className="text-[13px] opacity-80 mt-2">
+                    This coursework assignment for our first-year, first-semester programming module focuses on
+                    developing fundamental file handling skills in Python. The project involves reading and writing
+                    files, extracting and processing data from CSS files, and implementing robust input validation 
+                    systems with basic Tkinter knowledge.
+                    </p>
+                  </div>
+                  <div className="flex gap-4 mt-4">
+                    <button
+                      className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
+                      bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
+                      hover:opacity-90 transition-all"
+                    >  <a href="https://github.com/VishalOz/Traffic-Data-Py-CW">Live</a></button>
+                    <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/Traffic-Data-Py-CW">GitHub</a></button>
                       </div>
                   </div>
                 </div></div>
