@@ -196,20 +196,20 @@ const Home = () => {
 
 
 
-              <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
+              <div className={`grid lg:grid-cols-2 sm:grid-col-1 grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="row-span-1 flex justify-center items-center">
+                  <div className="lg:col-span-1 sm:col-span-1 col-span-2 flex justify-center items-center">
                     <img
                       src={portfolio}
                       alt="PROJECT1"
-                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
+                      className="lg:w-110 lg:h-70 w-60 h-40 object-cover rounded-2xl shadow-lg lg:mb-0 mb-3 "
                     />
                   </div>
                 <div className="col-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">VishFolio</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>August 2025</p>
-                    <p className="text-[13px] opacity-80 mt-2">
+                    <p className="text-[13px] lg:w-160 w-64 opacity-80 mt-2">
                     A modern, fully responsive personal Bento box style portfolio built with React, styled with Tailwind CSS, and improved using Framer Motion animations. 
                     </p>
                   </div>
@@ -229,18 +229,18 @@ const Home = () => {
 
                 <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-span-1 flex justify-center items-center">
+                  <div className="lg:col-span-1 sm:col-span-1 col-span-2 flex justify-center items-center">
                     <img
                       src={lifeonland}
                       alt="PROJECT2"
-                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
+                      className="lg:w-110 lg:h-70 w-60 h-40 object-cover rounded-2xl shadow-lg lg:mb-0 mb-3"
                     />
                   </div>
                 <div className="row-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">LifeOnLand</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>April 2025</p>
-                    <p className="text-[13px] opacity-80 mt-2">
+                    <p className="text-[13px] lg:w-160 w-64  opacity-80 mt-2">
                     A responsive carousel system showcases volunteer events with smooth transitions and thumbnail navigation.
                     </p>
                   </div>
@@ -259,18 +259,18 @@ const Home = () => {
 
                 <div className={`grid grid-cols-2 p-6 rounded-3xl shadow-xl border ${theme === 'dark' ? 'bg-white/10 border-white/20 text-white backdrop-blur-lg'
                   : 'bg-white/40 border-gray-200 text-gray-900 backdrop-blur-md'}`} >                
-                  <div className="col-span-1 flex justify-center items-center">
+                  <div className="lg:col-span-1 sm:col-span-1 col-span-2 flex justify-center items-center">
                     <img
                       src={histogram}
                       alt="PROJECT3"
-                      className="w-110 h-70 object-cover rounded-2xl shadow-lg"
+                      className="lg:w-110 lg:h-70 w-60 h-40 object-cover rounded-2xl shadow-lg lg:mb-0 mb-3"
                     />
                   </div>
                 <div className="row-span-1 flex flex-col justify-between pl-4">
                   <div>
                     <span className="text-xl font-semibold tracking-relaxed">Histogram</span>
                     <p className={`flex justify-start text-gray-500 font-bold test-sm`}>September 2024</p>
-                    <p className="text-[13px] opacity-80 mt-2">
+                    <p className="text-[13px] lg:w-160 w-64  opacity-80 mt-2">
                     This coursework assignment for our first-year, first-semester programming module focuses on
                     developing fundamental file handling skills in Python. The project involves reading and writing
                     files, extracting and processing data from CSS files, and implementing robust input validation 
@@ -311,7 +311,7 @@ const Home = () => {
         </motion.div>
           
         
-        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 lg:row-span-1 row-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
+        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 lg:row-span-1 row-span-40 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-sky-300'}`}
           animate={{opacity: isActive('About') ? 1 : 0.3, scale: isActive('About') ? 1 : 0.97 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
             <a href="https://www.linkedin.com/in/vishal-sudasinghe/" target="_blank" rel="noopener noreferrer" >
@@ -319,7 +319,7 @@ const Home = () => {
             </a>
         </motion.div>
 
-        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
+        <motion.div className={`flex justify-center items-center col-span-6 lg:col-span-1 sm:col-span-1 lg:row-span-1 row-span-40 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}
           animate={{opacity: isActive('Projects') ? 1 : 0.3, scale: isActive('Projects') ? 1 : 0.97}}
           transition={{ duration: 0.3, ease: 'easeInOut' }}>
              <a href="https://github.com/VishalOz/" target="_blank" rel="noopener noreferrer">
@@ -390,7 +390,7 @@ const Home = () => {
         </AnimatePresence>
 
         <div className={`flex justify-center items-center sm:col-span-1 sm:row-span-1 lg:row-span-1 lg:col-span-1 
-        row-span-1 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
+        row-span-40 col-span-6 rounded-4xl p-5 ${theme === 'dark' ? 'bg-black border border-white' : 'bg-white'}`}>
           <div className={`${theme === 'dark' ? 'bg-black border border-gray-300' : 'bg-gray-100' } flex justify-center items-center  w-25 h-15 lg:w-25 lg:h-15 rounded-full cursor-pointer`} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               <motion.div 
               className={`${theme === 'dark' ? 'bg-white' : 'bg-black' } lg:w-10 lg:h-10 w-12 h-12 rounded-full shadow-md`}
@@ -410,7 +410,7 @@ const Home = () => {
             animate={{opacity: isActive('Media') ? 1 : 0.3, scale: isActive('Media') ? 1 : 0.97}}>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute top-1/2 left-1 w-150 h-150 rounded-full`}></div>
               <div className={`${theme === 'dark' ? 'bg-white border border-white' : 'bg-rose-300'} absolute bottom-1/2 left-1 w-60 h-60 rounded-full`}></div>
-              <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+              <div className="absolute bottom-10 left-0 w-full h-full flex justify-center items-center">
                 <Sm />
               </div>
               <div className={`absolute bottom-3 right-3`}>
