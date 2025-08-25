@@ -305,7 +305,7 @@ const Home = () => {
           <Median />
           <div className={`absolute bottom-3 right-3`}>
             <button className={`${theme === "dark" ? "bg-black text-white border border-gray-200 " : "bg-white text-black border border-gray-200 "} cursor-pointer hover:border-gray-400 transition duration-300 w-25 px-3 py-1 rounded-full text-sm`}>
-              Read more
+              <a href="https://medium.com/@oshadavishal392">Read more</a>
             </button>
           </div>
         </motion.div>
@@ -381,9 +381,13 @@ const Home = () => {
               </div>
 
               <p className="leading-relaxed text-md px-10 ">
-              I was never the stereotypical “IT geek.” If I had to count the computer games I've played, I could do it on the fingers of my hands and feet and still have a few fingers left. My interests were always more in math, physics, and problem-solving. I wasn't the best at them, but I truly enjoyed the curiosity they sparked in me.
-              After many twists and turns in life, I chose to pursue computer science a field I hadn't touched in over 10 years. To my surprise, diving back into it brought back the same spark I once had when exploring math and physics.
-              Now, technology fuels that curiosity again. Every challenge feels like a puzzle waiting to be solved, and each solution opens the door to new possibilities. This is my journey so far and I'm excited to see where it takes me next.
+              I was never the typical "tech guy." If I counted all the computer games I've played, I'd barely fill one hand. My interests always leaned toward math, physics, and figuring out how things work. I wasn't brilliant at any of these subjects, but they genuinely excited me there's something addictive about understanding why complex systems tick the way they do.
+              Life took me down various paths, and eventually I circled back to computer science after more than ten years away from it. What caught me off guard was how natural it felt to return. The same curiosity that used to drive me through math problems and physics concepts now lights up when I'm working through algorithms or understanding how systems are built. Technology became my new playground for curiosity, where every challenge isn't just something to fix, but a chance to understand something deeper about how we structure information and make things work automatically.
+              The more I got into it, the clearer it became that computer science is about way more than just writing code. You need patience to work through complicated logic step by step, creativity to build elegant solutions from vague requirements, and the grit to keep going when everything seems broken. Those error messages that used to drive me crazy? They became my teachers, giving me exact feedback about what I didn't understand yet. I started seeing that real progress doesn't come from avoiding mistakes it comes from getting better at learning from them.<br/>
+              <br/>Maybe the biggest change has been learning how to teach myself. Without a tech family background or years of programming experience, I've had to figure out my own way of learning things. That meant spending hours pulling together information from different sources, playing around with concepts until they clicked, and building projects that stretched what I thought I could do. Whether I was struggling with making websites work on phones or putting together my first complete web application, each breakthrough felt like proof that I could actually bridge the gap between understanding something in theory and making it work in practice.
+              What gets me most excited isn't just what I've learned so far it's realizing how much more there is to discover. Technology keeps evolving, which means learning never really stops. Instead of seeing this as some exhausting race to keep up, I see it as a promise that I'll never run out of interesting things to explore. It's like having a career where curiosity is actually your main tool.
+              This whole thing is more than just switching careers it's like having an intellectual awakening. I'm seeing how the thinking skills I developed in one area can be incredibly useful in another, how subjects that seem completely different often work in surprisingly similar ways, and how staying curious might actually be more important than mastering any particular technology.
+              Moving forward, I'm not just thinking about the next programming language to learn or the latest framework to pick up. I'm looking forward to the complex problems I haven't encountered yet, the clever solutions I haven't thought of, and how this journey will keep changing not just what I can build professionally, but how I approach understanding and working with our increasingly complex world.
               </p>
             </motion.div>
           )}
@@ -456,14 +460,13 @@ const Home = () => {
             {/* Title */}
             <div className="flex justify-center mb-6">
               <span className="font-semibold tracking-wide text-xl">
-                Shall I keep you in the Loop?
+              Drop Me a Message
               </span>
             </div>
               {/* Description */}
             <div>
               <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} text-md text-center mb-7 px-3 leading-relaxed`}>
-                Content includes articles, early access to products, and ongoing
-                learnings.
+              Got an idea, feedback, or just want to connect? Type your message below  it’ll go straight to my inbox.
               </p>
             </div>
               {/* Email Input */}
@@ -490,7 +493,7 @@ const Home = () => {
               const body = `User message: ${userInput}`;
               window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
-            className={`cursor-pointer ${theme === 'dark' ? 'bg-gray-200 text-black' : `bg-white text-black border border-1 border-gray-300`} px-3 font-bold text-sm font-bold hover:opacity-70 hover:border-gray-600 rounded-full w-25 h-7 flex items-center justify-center
+            className={`${theme === 'dark' ? ' text-white' : `text-black`} transition duration-300 border border-gray-300 bg-transparent px-3 font-bold text-sm font-bold hover:opacity-70 hover:border-gray-400 rounded-full w-25 h-7 flex items-center justify-center
             `}>Submit</button>
             </div>
         </motion.div>
