@@ -218,9 +218,9 @@ const Home = () => {
                       className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
-                    >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
+                    >  <a href="https://lnkd.in/eX8RfNg8">Live</a></button>
                     <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/VishFolio/blob/main/index.html">GitHub</a></button>
                       </div>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const Home = () => {
                       hover:opacity-90 transition-all"
                     >  <a href="https://vishaloz.github.io/LifeOnLandCW-EventsPage-UI-/">Live</a></button>
                     <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-">GitHub</a></button>
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/LifeOnLandCW-EventsPage-UI-/blob/main/gh.html">GitHub</a></button>
                       </div>
                   </div>
                 </div>
@@ -282,9 +282,9 @@ const Home = () => {
                       className="px-4 py-2 rounded-2xl text-sm font-medium shadow-md 
                       bg-gradient-to-r from-emerald-400 to-emerald-600 text-white 
                       hover:opacity-90 transition-all"
-                    >  <a href="https://github.com/VishalOz/Traffic-Data-Py-CW">Live</a></button>
+                    >  <a href="">Live</a></button>
                     <button className="cursor-pointer px-4 py-2 rounded-2xl text-sm font-medium shadow-md bg-gradient-to-r from-indigo-400 to-indigo-600 text-white
-                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/Traffic-Data-Py-CW">GitHub</a></button>
+                      hover:opacity-90 transition-all"><a href="https://github.com/VishalOz/Traffic-Data-Py-CW/blob/vishal/Python%20file.py">GitHub</a></button>
                       </div>
                   </div>
                 </div></div>
